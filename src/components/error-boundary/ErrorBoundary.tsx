@@ -35,10 +35,10 @@ export const ErrorBoundary = () => {
           error={error}
         />
       ))}
-      <SourceCode
+      {/* <SourceCode
         sourceCode={maybeWithCode.sourceCode}
         errorLines={maybeWithCode.errorLines}
-      />
+      /> */}
     </div>
   );
 };
