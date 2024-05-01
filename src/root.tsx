@@ -44,6 +44,5 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
   </html>
 );
 
-export default function App() {
-  return <Outlet />;
-}
+const App = () => <Outlet />;
+export default App;
