@@ -5,7 +5,7 @@ import { fromPromiseTask } from '../../examples';
 import { effectLoader } from '../../server/effects/effect-loader';
 
 import { ErrorBoundary as Boundary } from './../../components/error-boundary/ErrorBoundary';
-import { sourceCodeProps } from './source-code-props';
+//import { sourceCodeProps } from './source-code-props';
 
 export const loader = effectLoader(
   ({ request }) =>
@@ -16,7 +16,7 @@ export const loader = effectLoader(
         body: request.body,
       },
     })(fromPromiseTask),
-  ...sourceCodeProps,
+  //...sourceCodeProps,
 );
 
 export const ErrorBoundary = () => <Boundary />;

@@ -5,7 +5,7 @@ import { ErrorBoundary as Boundary } from '../../components/error-boundary/Error
 import { taggedErrorWithCtorTask } from '../../examples';
 import { effectLoader } from '../../server/effects/effect-loader';
 
-import { sourceCodeProps } from './source-code-props';
+//import { sourceCodeProps } from './source-code-props';
 
 export const loader = effectLoader(
   ({ request }) =>
@@ -16,7 +16,7 @@ export const loader = effectLoader(
         body: request.body,
       },
     })(taggedErrorWithCtorTask),
-  ...sourceCodeProps,
+  // ...sourceCodeProps,
 );
 
 export const ErrorBoundary = () => <Boundary />;

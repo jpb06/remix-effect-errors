@@ -4,7 +4,7 @@ import { Effect } from 'effect';
 import { parallelTask } from '../../examples';
 import { effectLoader } from '../../server/effects/effect-loader';
 
-import { sourceCodeProps } from './source-code-props';
+//import { sourceCodeProps } from './source-code-props';
 
 export const loader = effectLoader(
   ({ request }) =>
@@ -15,7 +15,7 @@ export const loader = effectLoader(
         body: request.body,
       },
     })(parallelTask),
-  ...sourceCodeProps,
+  // ...sourceCodeProps,
 );
 
 const ParallelExample = () => {
