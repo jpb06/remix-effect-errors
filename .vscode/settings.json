@@ -32,5 +32,8 @@
     ["ClassName \\=([^;]*);", "'([^']*)'"],
     ["ClassName \\=([^;]*);", "\"([^\"]*)\""],
     ["ClassName \\=([^;]*);", "\\`([^\\`]*)\\`"]
-  ]
+  ],
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }
