@@ -5,11 +5,7 @@ import { captureErrors, prettyPrint } from 'effect-errors';
 import { getSpansDuration } from './logic/get-spans-duration';
 
 export const effectLoader =
-  <A, E>(
-    effect: (args: LoaderFunctionArgs) => Effect.Effect<A, E>,
-    getSourceCode?: () => Promise<string>,
-    errorLines?: number[],
-  ) =>
+  <A, E>(effect: (args: LoaderFunctionArgs) => Effect.Effect<A, E>) =>
   async (args: LoaderFunctionArgs) =>
     await Effect.runPromise(
       pipe(
@@ -40,17 +36,10 @@ export const effectLoader =
         }),
       ),
     ).then(async ({ _tag, data }) => {
-      let sourceCode = undefined;
-      if (getSourceCode) {
-        sourceCode = await getSourceCode();
-      }
-
       if (_tag === 'error') {
         throw json(
           {
             type: 'effect',
-            sourceCode,
-            errorLines,
             errors: (data as { message: { toString?: () => string } }[]).map(
               (d) => ({
                 ...d,

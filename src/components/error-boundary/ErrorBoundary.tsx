@@ -4,17 +4,10 @@ import { Card } from '../card/Card';
 import { Title } from '../title/Title';
 
 import { AppError } from './children/AppError';
-import { SourceCode } from './children/SourceCode';
 import { useErrorDetails } from './hooks/useErrorDetails';
 
 export const ErrorBoundary = () => {
-  const { _tag, errors, ...rest } = useErrorDetails();
-
-  const maybeWithCode = rest as {
-    path: string;
-    sourceCode?: string | undefined;
-    errorLines?: number[] | undefined;
-  };
+  const { _tag, errors } = useErrorDetails();
 
   return (
     <div className="mb-3 flex flex-col gap-3">
@@ -35,10 +28,6 @@ export const ErrorBoundary = () => {
           error={error}
         />
       ))}
-      {/* <SourceCode
-        sourceCode={maybeWithCode.sourceCode}
-        errorLines={maybeWithCode.errorLines}
-      /> */}
     </div>
   );
 };

@@ -14,8 +14,6 @@ export const isEffectError = (
 ): error is {
   data: {
     type: 'effect';
-    sourceCode?: string;
-    errorLines?: number[];
     errors: EffectError[];
   };
 } => (error as { data?: { type?: 'effect' } })?.data?.type === 'effect';

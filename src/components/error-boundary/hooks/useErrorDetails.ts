@@ -17,8 +17,6 @@ export type ErrorsDetails =
   | {
       _tag: 'effect';
       path: string;
-      sourceCode?: string;
-      errorLines?: number[];
       errors: EffectError[];
     };
 
@@ -30,8 +28,6 @@ export const useErrorDetails = (): ErrorsDetails => {
     return {
       _tag: 'effect',
       path: pathname,
-      sourceCode: error.data?.sourceCode,
-      errorLines: error.data?.errorLines,
       errors: error.data.errors,
     };
   }

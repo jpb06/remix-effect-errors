@@ -1,21 +1,28 @@
 import { useLoaderData } from '@remix-run/react';
 import { Effect } from 'effect';
 
+import { Code } from '../../components/code/Code';
 import { parallelTask } from '../../examples';
 import { effectLoader } from '../../server/effects/effect-loader';
 
-//import { sourceCodeProps } from './source-code-props';
+import { ErrorBoundary as Boundary } from './../../components/error-boundary/ErrorBoundary';
+import { exampleString } from './example-string';
 
-export const loader = effectLoader(
-  ({ request }) =>
-    Effect.withSpan('parallel-example-loader', {
-      attributes: {
-        url: request.url,
-        method: request.method,
-        body: request.body,
-      },
-    })(parallelTask),
-  // ...sourceCodeProps,
+export const loader = effectLoader(({ request }) =>
+  Effect.withSpan('parallel-example-loader', {
+    attributes: {
+      url: request.url,
+      method: request.method,
+      body: request.body,
+    },
+  })(parallelTask),
+);
+
+export const ErrorBoundary = () => (
+  <>
+    <Boundary />
+    <Code errorIndexes={[15]} code={exampleString} className="mb-3" />
+  </>
 );
 
 const ParallelExample = () => {
