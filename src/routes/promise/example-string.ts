@@ -18,7 +18,7 @@ interface Data {
 
 const readUser = Effect.withSpan('read-user')(
   Effect.tryPromise<Data, FileError>({
-    try: async () => await Promise.resolve({ id: 1, name: 'cool story bro' }),
+    try: () => Promise.resolve({ id: 1, name: 'cool story bro' }),
     catch: (e) => new FileError({ cause: e }),
   }),
 );
@@ -28,8 +28,7 @@ const fetchTask = (userId: number) =>
     attributes: { userId },
   })(
     Effect.tryPromise({
-      try: async () =>
-        await fetch(\`https://yolo-bro-oh-no.org/users/\${userId}\`),
+      try: () => fetch(\`https://yolo-bro-oh-no.org/users/\${userId}\`),
       catch: (e) =>
         new FetchError({
           cause: (e as Error).message,
@@ -40,7 +39,7 @@ const fetchTask = (userId: number) =>
 const unwrapResponseTask = (response: Response) =>
   Effect.withSpan('unwrap-fetch-user-response')(
     Effect.tryPromise({
-      try: async () => await response.json(),
+      try: async () => response.json(),
       catch: (e) => new FetchError({ cause: e }),
     }),
   );

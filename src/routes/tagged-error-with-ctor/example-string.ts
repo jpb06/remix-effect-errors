@@ -15,7 +15,7 @@ class TaggedErrorWithErrorCtor extends TaggedError('OhNo') {
 
 const readUser = Effect.withSpan('read-user')(
   Effect.tryPromise<Data, TaggedErrorWithErrorCtor>({
-    try: async () => await fs.readJson('./src/examples/data/yolo.json'),
+    try: async () => fs.readJson('./src/examples/data/yolo.json'),
     catch: (e) => new TaggedErrorWithErrorCtor(e),
   }),
 );

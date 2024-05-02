@@ -11,7 +11,7 @@ const readUser = (name: string) =>
     attributes: { name },
   })(
     Effect.tryPromise({
-      try: async () => await Promise.reject('Oh no, this user does not exist!'),
+      try: async () => Promise.reject('Oh no, this user does not exist!'),
       catch: (e) => new UserNotFoundError({ cause: e }),
     }),
   );
