@@ -11,7 +11,12 @@ export const loader = () => nodeExample();
 export const ErrorBoundary = () => (
   <>
     <Boundary />
-    <Code errorIndexes={[2]} code={exampleString} className="mb-3" />
+    <Code
+      title="Code sample raising this error"
+      errorIndexes={[2]}
+      code={exampleString}
+      className="mb-3"
+    />
   </>
 );
 

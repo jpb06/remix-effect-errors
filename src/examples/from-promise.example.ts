@@ -42,7 +42,7 @@ const fetchTask = (userId: number) =>
 const unwrapResponseTask = (response: Response) =>
   Effect.withSpan('unwrap-fetch-user-response')(
     Effect.tryPromise({
-      try: async () => await response.json(),
+      try: async () => (await response.json()) as Data,
       catch: (e) => new FetchError({ cause: e }),
     }),
   );

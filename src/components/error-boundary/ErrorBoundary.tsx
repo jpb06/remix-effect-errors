@@ -10,7 +10,7 @@ export const ErrorBoundary = () => {
   const { _tag, errors } = useErrorDetails();
 
   return (
-    <div className="mb-3 flex flex-col gap-3">
+    <div className="mb-2 flex flex-col gap-2">
       <Card>
         <Title size="2xl" className="flex justify-between">
           <div className="content-center">
