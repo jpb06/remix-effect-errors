@@ -2,15 +2,16 @@ import hljs from 'highlight.js/lib/common';
 import 'highlight.js/styles/github-dark.css';
 
 import type { PropsWithClassName } from '../../types/props-with-classname.type';
-import { Card } from '../card/Card';
 import { MotionContainer } from '../motion-container/MotionContainer';
 
 type CodeProps = {
   code: string;
-  errorIndexes: number[];
+  errorIndexes?: number[];
+  title: string;
 };
 
 export const Code = ({
+  title,
   className,
   code,
   errorIndexes,
@@ -19,7 +20,7 @@ export const Code = ({
     className={`mockup-code w-[98vw] bg-gradient-to-tr from-slate-900 to-slate-800 text-white before:text-white before:opacity-80 md:w-[52rem] ${className}`}
   >
     <div className="-mt-[34px] mb-2 ml-[88px] font-medium text-white opacity-80">
-      Code sample raising this error
+      {title}
     </div>
     {code.split('\n').map((line, index) => (
       <pre

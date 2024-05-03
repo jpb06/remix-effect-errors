@@ -1,8 +1,9 @@
-import { json, type LoaderFunctionArgs } from '@remix-run/server-runtime';
+import { type LoaderFunctionArgs } from '@remix-run/server-runtime';
 import { Effect, pipe } from 'effect';
 import { captureErrors, prettyPrint } from 'effect-errors';
 
 import { getSpansDuration } from './logic/get-spans-duration';
+import { remixThrow } from './logic/remix-throw';
 
 export const effectLoader =
   <A, E>(effect: (args: LoaderFunctionArgs) => Effect.Effect<A, E>) =>
@@ -35,26 +36,4 @@ export const effectLoader =
           });
         }),
       ),
-    ).then(async ({ _tag, data }) => {
-      if (_tag === 'error') {
-        throw json(
-          {
-            type: 'effect',
-            errors: (data as { message: { toString?: () => string } }[]).map(
-              (d) => ({
-                ...d,
-                message:
-                  d.message.toString !== undefined
-                    ? d.message.toString()
-                    : d.message,
-              }),
-            ),
-          },
-          {
-            status: 500,
-          },
-        );
-      }
-
-      return data;
-    });
+    ).then(remixThrow<A>);

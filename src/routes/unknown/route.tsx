@@ -21,7 +21,12 @@ export const loader = effectLoader(({ request }) =>
 export const ErrorBoundary = () => (
   <>
     <Boundary />
-    <Code errorIndexes={[5]} code={exampleString} className="mb-3" />
+    <Code
+      title="Code sample raising this error"
+      errorIndexes={[5]}
+      code={exampleString}
+      className="mb-3"
+    />
   </>
 );
 
