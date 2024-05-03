@@ -16,9 +16,11 @@ export const Code = ({
   errorIndexes,
 }: PropsWithClassName<CodeProps>) => (
   <MotionContainer
-    className={`mockup-code w-[98vw]  bg-gradient-to-tr from-slate-900 to-slate-800 text-white md:w-[52rem] ${className}`}
+    className={`mockup-code w-[98vw] bg-gradient-to-tr from-slate-900 to-slate-800 text-white before:text-white before:opacity-80 md:w-[52rem] ${className}`}
   >
-    <div className="-mt-[34px] ml-[88px] font-medium text-slate-600">Code</div>
+    <div className="-mt-[34px] mb-2 ml-[88px] font-medium text-white opacity-80">
+      Code sample raising this error
+    </div>
     {code.split('\n').map((line, index) => (
       <pre
         key={index}
@@ -27,7 +29,7 @@ export const Code = ({
         dangerouslySetInnerHTML={{
           __html: hljs.highlightAuto(line, ['typescript']).value,
         }}
-      ></pre>
+      />
     ))}
   </MotionContainer>
 );
