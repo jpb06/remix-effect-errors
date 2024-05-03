@@ -17,7 +17,7 @@ export const Code = ({
   errorIndexes,
 }: PropsWithClassName<CodeProps>) => (
   <MotionContainer
-    className={`mockup-code w-[98vw] bg-gradient-to-tr from-slate-900 to-slate-800 text-white before:text-white before:opacity-80 md:w-[52rem] ${className}`}
+    className={`mockup-code w-[calc(100vw-10px)] bg-gradient-to-tr from-slate-900 to-slate-800 text-white before:text-white before:opacity-80 md:w-[52rem] ${className}`}
   >
     <div className="-mt-[34px] mb-2 ml-[88px] font-medium text-white opacity-80">
       {title}

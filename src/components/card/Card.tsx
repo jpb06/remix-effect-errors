@@ -8,7 +8,7 @@ export const Card = ({
   className,
 }: PropsWithChildren<PropsWithClassName>) => (
   <MotionContainer
-    className={`break-word card w-[98vw] overflow-clip bg-gradient-to-tl from-indigo-950 to-cyan-900 shadow-xl md:w-[52rem] ${className}`}
+    className={`break-word card w-[calc(100vw-10px)] overflow-clip bg-gradient-to-tl from-indigo-950 to-cyan-900 shadow-xl md:w-[52rem] ${className}`}
   >
     <div className="card-body">{children}</div>
   </MotionContainer>
