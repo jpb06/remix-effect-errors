@@ -55,6 +55,7 @@ module.exports = {
           'warn',
           { validStrategies: ['ternary'] },
         ],
+        'react/self-closing-comp': ['error'],
         '@typescript-eslint/consistent-type-exports': 'error',
         '@typescript-eslint/consistent-type-imports': 'error',
         '@typescript-eslint/no-unused-vars': [
