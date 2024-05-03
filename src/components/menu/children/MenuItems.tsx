@@ -18,7 +18,7 @@ export const useCasesMenuItems: MenuItemProps[] = [
 
 export const MenuItem = ({ href, label }: MenuItemProps) => (
   <li>
-    <a className="px-2" href={href}>
+    <a className="py-4 md:px-2 md:py-0" href={href}>
       {label}
     </a>
   </li>
