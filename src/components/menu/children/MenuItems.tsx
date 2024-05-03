@@ -1,3 +1,5 @@
+import { Link } from '@remix-run/react';
+
 type MenuItemProps = {
   href: string;
   label: string;
@@ -18,8 +20,8 @@ export const useCasesMenuItems: MenuItemProps[] = [
 
 export const MenuItem = ({ href, label }: MenuItemProps) => (
   <li>
-    <a className="py-4 md:px-2 md:py-1" href={href}>
+    <Link to={href} className="py-4 md:px-2 md:py-1">
       {label}
-    </a>
+    </Link>
   </li>
 );
