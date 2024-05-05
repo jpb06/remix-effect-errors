@@ -1,18 +1,18 @@
-import { Card } from '../../card/Card';
+import { Card } from '../../../../card/Card';
 
 import { ErrorNumber } from './ErrorNumber';
 
-type NodeErrorProps = {
+type NodeErrorDetailsProps = {
   number: number;
   hasSeveralErrors: boolean;
   error: Error;
 };
 
-export const NodeError = ({
+export const NodeErrorDetails = ({
   number,
   hasSeveralErrors,
   error,
-}: NodeErrorProps) => (
+}: NodeErrorDetailsProps) => (
   <Card>
     <ErrorNumber hasSeveralErrors={hasSeveralErrors} number={number} />{' '}
     {error.message}

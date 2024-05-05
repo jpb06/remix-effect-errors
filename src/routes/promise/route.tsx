@@ -3,7 +3,7 @@ import { Effect } from 'effect';
 
 import { Code } from '../../components/code/Code';
 import { fromPromiseTask } from '../../examples';
-import { effectLoader } from '../../server/effects/effect-loader';
+import { effectLoader } from '../../server/effects/loader/effect-loader';
 
 import { ErrorBoundary as Boundary } from './../../components/error-boundary/ErrorBoundary';
 import { exampleString } from './example-string';
@@ -31,7 +31,7 @@ export const ErrorBoundary = () => (
 );
 
 const PromiseExample = () => {
-  const data = useLoaderData();
+  const data = useLoaderData<typeof loader>();
 
   return <>{data}</>;
 };

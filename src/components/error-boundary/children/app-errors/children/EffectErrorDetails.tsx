@@ -1,19 +1,19 @@
-import { Card } from '../../card/Card';
+import { Card } from '../../../../card/Card';
+import type { EffectError as EffectErrorType } from '../../../logic/is-effect-error.logic';
 
-import type { EffectError as EffectErrorType } from './../logic/is-effect-error.logic';
 import { ErrorNumber } from './ErrorNumber';
 
-type EffectErrorProps = {
+type EffectErrorDetailsProps = {
   number: number;
   hasSeveralErrors: boolean;
   error: EffectErrorType;
 };
 
-export const EffectError = ({
+export const EffectErrorDetails = ({
   hasSeveralErrors,
   number,
   error,
-}: EffectErrorProps) => (
+}: EffectErrorDetailsProps) => (
   <Card>
     <div className="text-lg">
       <ErrorNumber hasSeveralErrors={hasSeveralErrors} number={number} />{' '}

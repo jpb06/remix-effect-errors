@@ -21,7 +21,7 @@ export const ErrorBoundary = () => (
 );
 
 const NodeErrorExample = () => {
-  const data = useLoaderData();
+  const data = useLoaderData<typeof loader>();
 
   return <>{data}</>;
 };
