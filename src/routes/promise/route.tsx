@@ -23,8 +23,8 @@ export const ErrorBoundary = () => (
     <Boundary />
     <Code
       title="Code sample raising this error"
-      errorIndexes={[33, 34, 35]}
       code={exampleString}
+      errorIndexes={[33, 34, 35]}
       className="mb-3"
     />
   </>
