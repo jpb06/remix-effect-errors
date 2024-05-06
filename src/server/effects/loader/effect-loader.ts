@@ -11,16 +11,20 @@ export const effectLoader =
     await Effect.runPromise(
       pipe(
         effect(args),
-        Effect.map((data) => ({ _tag: 'success', data })),
+        Effect.map((data) => ({ _tag: 'success' as const, data })),
         Effect.sandbox,
         Effect.catchAll((cause) => {
+          // Serverside logging
           const errorsText = prettyPrint(cause, { stripCwd: true });
           console.error(errorsText);
+
+          // Getting errors data to display it client side
           const { errors } = captureErrors(cause, {
             reverseSpans: true,
             stripCwd: true,
           });
 
+          // Computing spans duration ...
           const errorsWithSpanDuration = errors.map(
             ({ errorType, message, stack, spans }) => ({
               type: errorType,
@@ -31,9 +35,9 @@ export const effectLoader =
           );
 
           return Effect.succeed({
-            _tag: 'error',
+            _tag: 'error' as const,
             data: errorsWithSpanDuration,
           });
         }),
       ),
-    ).then(remixThrow<A>);
+    ).then(remixThrow);

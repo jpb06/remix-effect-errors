@@ -28,7 +28,7 @@ export const Code = ({
         data-prefix={index + 1}
         className={`${errorIndexes?.includes(index + 1) ? 'bg-red-900' : undefined}`}
         dangerouslySetInnerHTML={{
-          __html: hljs.highlightAuto(line, ['typescript']).value,
+          __html: hljs.highlightAuto(line, ['xml', 'typescript']).value,
         }}
       />
     ))}

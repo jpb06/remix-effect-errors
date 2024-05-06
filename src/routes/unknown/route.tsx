@@ -4,7 +4,7 @@ import { Effect } from 'effect';
 import { Code } from '../../components/code/Code';
 import { ErrorBoundary as Boundary } from '../../components/error-boundary/ErrorBoundary';
 import { unknownErrorTask } from '../../examples';
-import { effectLoader } from '../../server/effects/effect-loader';
+import { effectLoader } from '../../server/effects/loader/effect-loader';
 
 import { exampleString } from './example-string';
 
@@ -31,7 +31,7 @@ export const ErrorBoundary = () => (
 );
 
 const UnknownError = () => {
-  const data = useLoaderData();
+  const data = useLoaderData<typeof loader>();
 
   return <>{data}</>;
 };

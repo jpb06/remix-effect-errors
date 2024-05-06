@@ -26,7 +26,7 @@ export const useErrorDetails = (): ErrorsDetails => {
 
   if (isEffectError(error)) {
     return {
-      _tag: 'effect',
+      _tag: 'effect' as const,
       path: pathname,
       errors: error.data.errors,
     };
@@ -35,7 +35,7 @@ export const useErrorDetails = (): ErrorsDetails => {
   const isRoute = isRouteErrorResponse(error);
   if (isRoute) {
     return {
-      _tag: 'route',
+      _tag: 'route' as const,
       path: pathname,
       errors: [
         {
@@ -47,14 +47,14 @@ export const useErrorDetails = (): ErrorsDetails => {
 
   if (error instanceof Error) {
     return {
-      _tag: 'error',
+      _tag: 'error' as const,
       path: pathname,
       errors: [error],
     };
   }
 
   return {
-    _tag: 'unknown',
+    _tag: 'unknown' as const,
     path: pathname,
     errors: [{ message: 'Unknown Error' }],
   };

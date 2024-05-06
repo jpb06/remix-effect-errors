@@ -8,6 +8,7 @@ import {
   errorBoundaryCode,
   remixThrowCode,
   routeLoaderCode,
+  useErrorDetailsCode,
 } from './index-code-samples';
 
 export const meta: MetaFunction = () => [
@@ -82,7 +83,12 @@ const Index = () => (
     <div className="my-2 ml-4 md:w-[52rem]">
       We can then use an error boundary to display effect errors details:
     </div>
-    <div className="my-2">
+    <div className="my-2 flex flex-col gap-2">
+      <Code
+        title="useErrorsDetails hook"
+        code={useErrorDetailsCode}
+        className="self-center"
+      />
       <Code
         title="Remix error boundary"
         code={errorBoundaryCode}
@@ -91,4 +97,5 @@ const Index = () => (
     </div>
   </div>
 );
+
 export default Index;
