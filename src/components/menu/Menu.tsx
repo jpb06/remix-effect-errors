@@ -1,5 +1,5 @@
 import { Bars3Icon } from '@heroicons/react/24/solid';
-import { SiGithub } from '@icons-pack/react-simple-icons';
+import { default as SiGithub } from '@icons-pack/react-simple-icons/icons/SiGithub.mjs';
 import { useRef } from 'react';
 
 import { MotionContainer } from '../motion-container/MotionContainer';
