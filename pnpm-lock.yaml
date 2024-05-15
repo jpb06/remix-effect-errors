@@ -33,8 +33,8 @@ importers:
         specifier: ^3.1.5
         version: 3.1.5
       effect-errors:
-        specifier: ^1.3.11
-        version: 1.3.11(fast-check@3.18.0)
+        specifier: ^1.3.12
+        version: 1.3.12
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
@@ -308,11 +308,10 @@ packages:
     resolution: {integrity: sha512-6mQNsaLeXTw0nxYUYu+NSa4Hx4BlF1x1x8/PMFbiR+GBSr+2DkECc69b8hgy2frEodNcvPffeH8YfWd3LI6jhQ==}
     engines: {node: '>=6.9.0'}
 
-  '@effect/schema@0.66.16':
-    resolution: {integrity: sha512-sT/k5NOgKslGPzs3DUaCFuM6g2JQoIIT8jpwEorAZooplPIMK2xIspr7ECz6pp6Dc7Wz/ppXGk7HVyGZQsIYEQ==}
+  '@effect/schema@0.67.3':
+    resolution: {integrity: sha512-tLVzTlQuUhxlUx9PoMGlG+CPNU9qrZ1QJG4jPlRIV7qJfUdEEvgDsPkQX0DmBDvA2ZRVaBHXe+7lkzjWkojlIA==}
     peerDependencies:
-      effect: ^3.1.3
-      fast-check: ^3.13.2
+      effect: ^3.1.5
 
   '@emotion/hash@0.9.1':
     resolution: {integrity: sha512-gJB6HLm5rYwSLI6PQa+X1t5CFGrv1J1TWG+sOyMCeKz2ojaj6Fnl/rZEspogG+cvqbt4AE/2eIyD2QfLKTBNlQ==}
@@ -1517,8 +1516,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  effect-errors@1.3.11:
-    resolution: {integrity: sha512-9acdB8BHC+wIJMBMex0e95cnPq7fR8qOeV9xuGSecPEbkZowWr7Sc2HJe4iyCMpNn2Dc6QNQnDuSYd2lBcfCoA==}
+  effect-errors@1.3.12:
+    resolution: {integrity: sha512-pWOYDHvHlWhzsRasexlOqMKvon+K3wBgGJywu9KFpjHxdO/51S5ZG4oE5dSDab8WylfxI9KBSGneELgq2pb6dQ==}
     engines: {node: 20.x}
 
   effect@3.1.5:
@@ -3996,7 +3995,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.5
       to-fast-properties: 2.0.0
 
-  '@effect/schema@0.66.16(effect@3.1.5)(fast-check@3.18.0)':
+  '@effect/schema@0.67.3(effect@3.1.5)':
     dependencies:
       effect: 3.1.5
       fast-check: 3.18.0
@@ -5267,13 +5266,11 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  effect-errors@1.3.11(fast-check@3.18.0):
+  effect-errors@1.3.12:
     dependencies:
-      '@effect/schema': 0.66.16(effect@3.1.5)(fast-check@3.18.0)
+      '@effect/schema': 0.67.3(effect@3.1.5)
       chalk: 4.1.2
       effect: 3.1.5
-    transitivePeerDependencies:
-      - fast-check
 
   effect@3.1.5: {}
 
