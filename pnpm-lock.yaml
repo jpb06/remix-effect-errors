@@ -8,9 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@iconify/react':
-        specifier: ^4.1.1
-        version: 4.1.1(react@18.3.1)
+      '@heroicons/react':
+        specifier: ^2.1.3
+        version: 2.1.3(react@18.3.1)
+      '@icons-pack/react-simple-icons':
+        specifier: ^9.5.0
+        version: 9.5.0(react@18.3.1)
       '@remix-run/css-bundle':
         specifier: ^2.9.2
         version: 2.9.2
@@ -27,8 +30,8 @@ importers:
         specifier: ^2.9.2
         version: 2.9.2(typescript@5.4.5)
       effect:
-        specifier: ^3.1.4
-        version: 3.1.4
+        specifier: ^3.1.5
+        version: 3.1.5
       effect-errors:
         specifier: ^1.3.11
         version: 1.3.11(fast-check@3.18.0)
@@ -599,6 +602,11 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  '@heroicons/react@2.1.3':
+    resolution: {integrity: sha512-fEcPfo4oN345SoqdlCDdSa4ivjaKbk0jTd+oubcgNxnNgAfzysfwWfQUr+51wigiWHQQRiZNd1Ao0M5Y3M2EGg==}
+    peerDependencies:
+      react: '>= 16'
+
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -610,13 +618,10 @@ packages:
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
 
-  '@iconify/react@4.1.1':
-    resolution: {integrity: sha512-jed14EjvKjee8mc0eoscGxlg7mSQRkwQG3iX3cPBCO7UlOjz0DtlvTqxqEcHUJGh+z1VJ31Yhu5B9PxfO0zbdg==}
+  '@icons-pack/react-simple-icons@9.5.0':
+    resolution: {integrity: sha512-+y7GW8magFYS4bmlInrsW1q6NOy0dd3eNwjKashlg9hyhPF6PKTWB401qkXaH23mieb5TMMyf/U4mDDPfrjgGQ==}
     peerDependencies:
-      react: '>=16'
-
-  '@iconify/types@2.0.0':
-    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+      react: ^16.13 || ^17 || ^18
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1513,8 +1518,8 @@ packages:
     resolution: {integrity: sha512-9acdB8BHC+wIJMBMex0e95cnPq7fR8qOeV9xuGSecPEbkZowWr7Sc2HJe4iyCMpNn2Dc6QNQnDuSYd2lBcfCoA==}
     engines: {node: 20.x}
 
-  effect@3.1.4:
-    resolution: {integrity: sha512-eAKVwRyDF+8wCRKWY6yK7inCwsTGjLIyZTggbQjlVp/ziHBmfVsOCn/JOyW5iFjRoeZv7+TsLMUPjoMwkt1QQA==}
+  effect@3.1.5:
+    resolution: {integrity: sha512-nTkW/ViRF8cXVMKjusYMVp7L1eqLwMZV7K6GHoqq3MD7NjPT/tJRVhY8d6z5Vam9kxgvRAzqwJKkaRpRVz1jTw==}
 
   electron-to-chromium@1.4.757:
     resolution: {integrity: sha512-jftDaCknYSSt/+KKeXzH3LX5E2CvRLm75P3Hj+J/dv3CL0qUYcOt13d5FN1NiL5IJbbhzHrb3BomeG2tkSlZmw==}
@@ -3984,9 +3989,9 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.5
       to-fast-properties: 2.0.0
 
-  '@effect/schema@0.66.16(effect@3.1.4)(fast-check@3.18.0)':
+  '@effect/schema@0.66.16(effect@3.1.5)(fast-check@3.18.0)':
     dependencies:
-      effect: 3.1.4
+      effect: 3.1.5
       fast-check: 3.18.0
 
   '@emotion/hash@0.9.1': {}
@@ -4149,6 +4154,10 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
+  '@heroicons/react@2.1.3(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -4161,12 +4170,9 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@iconify/react@4.1.1(react@18.3.1)':
+  '@icons-pack/react-simple-icons@9.5.0(react@18.3.1)':
     dependencies:
-      '@iconify/types': 2.0.0
       react: 18.3.1
-
-  '@iconify/types@2.0.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -5256,13 +5262,13 @@ snapshots:
 
   effect-errors@1.3.11(fast-check@3.18.0):
     dependencies:
-      '@effect/schema': 0.66.16(effect@3.1.4)(fast-check@3.18.0)
+      '@effect/schema': 0.66.16(effect@3.1.5)(fast-check@3.18.0)
       chalk: 4.1.2
-      effect: 3.1.4
+      effect: 3.1.5
     transitivePeerDependencies:
       - fast-check
 
-  effect@3.1.4: {}
+  effect@3.1.5: {}
 
   electron-to-chromium@1.4.757: {}
 

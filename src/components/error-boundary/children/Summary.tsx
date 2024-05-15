@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react/dist/iconify.js';
+import { FaceFrownIcon } from '@heroicons/react/24/solid';
 
 import { Card } from '../../card/Card';
 import { Title } from '../../title/Title';
@@ -12,7 +12,7 @@ export const Summary = ({ errors }: SummaryProps) => (
       <div className="content-center">
         {errors.length} error{errors.length > 1 ? 's' : ''} occured
       </div>
-      <Icon icon="fa-solid:sad-tear" className="h-10 w-10" />
+      <FaceFrownIcon className="h-10 w-10" />
     </Title>
   </Card>
 );

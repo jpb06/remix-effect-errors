@@ -4,7 +4,7 @@
 
  /* ----------------- */
 
- .tree {
+.tree {
   --spacing: 1.2rem;
   --radius: 6px;
 }
@@ -89,4 +89,4 @@
   background-position: calc(-1.6 * var(--radius)) 0;
 }
 
- /* ----------------- */
+/* ----------------- */
