@@ -1,4 +1,6 @@
 import { Bars3Icon } from '@heroicons/react/24/solid';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { default as SiGithub } from '@icons-pack/react-simple-icons/icons/SiGithub.mjs';
 import { useRef } from 'react';
 
