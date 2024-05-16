@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@heroicons/react':
-        specifier: ^2.1.3
-        version: 2.1.3(react@18.3.1)
-      '@icons-pack/react-simple-icons':
-        specifier: ^9.5.0
-        version: 9.5.0(react@18.3.1)
       '@remix-run/css-bundle':
         specifier: ^2.9.2
         version: 2.9.2
@@ -50,9 +44,6 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      simple-icons:
-        specifier: ^11.14.0
-        version: 11.14.0
       ts-pattern:
         specifier: ^5.1.1
         version: 5.1.1
@@ -625,11 +616,6 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@heroicons/react@2.1.3':
-    resolution: {integrity: sha512-fEcPfo4oN345SoqdlCDdSa4ivjaKbk0jTd+oubcgNxnNgAfzysfwWfQUr+51wigiWHQQRiZNd1Ao0M5Y3M2EGg==}
-    peerDependencies:
-      react: '>= 16'
-
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -649,11 +635,6 @@ packages:
 
   '@iconify/utils@2.1.23':
     resolution: {integrity: sha512-YGNbHKM5tyDvdWZ92y2mIkrfvm5Fvhe6WJSkWu7vvOFhMtYDP0casZpoRz0XEHZCrYsR4stdGT3cZ52yp5qZdQ==}
-
-  '@icons-pack/react-simple-icons@9.5.0':
-    resolution: {integrity: sha512-+y7GW8magFYS4bmlInrsW1q6NOy0dd3eNwjKashlg9hyhPF6PKTWB401qkXaH23mieb5TMMyf/U4mDDPfrjgGQ==}
-    peerDependencies:
-      react: ^16.13 || ^17 || ^18
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -3433,10 +3414,6 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons@11.14.0:
-    resolution: {integrity: sha512-KJ2R28d6tV+uu3GbRQTHizCGyjkI0QPhooYUcv4GjiE4XG0wSlqCFN/pUQK6gno46F0Fk2cyG5otFAK8EMaiYw==}
-    engines: {node: '>=0.12.18'}
-
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
@@ -4363,10 +4340,6 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@heroicons/react@2.1.3(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -4397,10 +4370,6 @@ snapshots:
       mlly: 1.7.0
     transitivePeerDependencies:
       - supports-color
-
-  '@icons-pack/react-simple-icons@9.5.0(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -7752,8 +7721,6 @@ snapshots:
   signal-exit@3.0.7: {}
 
   signal-exit@4.1.0: {}
-
-  simple-icons@11.14.0: {}
 
   slash@3.0.0: {}
 
