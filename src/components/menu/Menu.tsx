@@ -1,7 +1,4 @@
 import { Bars3Icon } from '@heroicons/react/24/solid';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import { default as SiGithub } from '@icons-pack/react-simple-icons/icons/SiGithub.mjs';
 import { useRef } from 'react';
 
 import { MotionContainer } from '../motion-container/MotionContainer';
@@ -11,6 +8,8 @@ import {
   MenuItem,
   useCasesMenuItems,
 } from './children/MenuItems';
+
+import JamGithub from '~icons/jam/github';
 
 export const Menu = () => {
   const mobileMenuRef = useRef<HTMLUListElement>(null);
@@ -55,7 +54,7 @@ export const Menu = () => {
       </div>
       <div className="navbar-end">
         <a href="https://github.com/jpb06/remix-effect-errors">
-          <SiGithub className="h-12 w-12 text-white" />
+          <JamGithub className="h-12 w-12 text-white" />
         </a>
       </div>
     </MotionContainer>
