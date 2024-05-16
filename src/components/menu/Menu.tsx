@@ -1,4 +1,3 @@
-import { Bars3Icon } from '@heroicons/react/24/solid';
 import { useRef } from 'react';
 
 import { MotionContainer } from '../motion-container/MotionContainer';
@@ -10,6 +9,7 @@ import {
 } from './children/MenuItems';
 
 import JamGithub from '~icons/jam/github';
+import MiMenu from '~icons/mi/menu';
 
 export const Menu = () => {
   const mobileMenuRef = useRef<HTMLUListElement>(null);
@@ -19,7 +19,7 @@ export const Menu = () => {
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <Bars3Icon className="h-8 w-8 text-white" />
+            <MiMenu className="h-8 w-8 text-white" />
           </div>
           <ul
             // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
