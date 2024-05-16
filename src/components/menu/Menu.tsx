@@ -9,7 +9,7 @@ import {
   useCasesMenuItems,
 } from './children/MenuItems';
 
-import FaBrandsGithubSquare from '~icons/fa-brands/github-square';
+import JamGithub from '~icons/jam/github';
 
 export const Menu = () => {
   const mobileMenuRef = useRef<HTMLUListElement>(null);
@@ -54,7 +54,7 @@ export const Menu = () => {
       </div>
       <div className="navbar-end">
         <a href="https://github.com/jpb06/remix-effect-errors">
-          <FaBrandsGithubSquare className="h-12 w-12 text-white" />
+          <JamGithub className="h-12 w-12 text-white" />
         </a>
       </div>
     </MotionContainer>
