@@ -45,6 +45,11 @@ export const EffectErrorDetails = ({
         </ul>
       </li>
     </ul>
-    <div className="border-l-2 border-red-600 pl-2">{error.stack}</div>
+    <div className="border-l-2 border-red-600 pl-2">
+      {error.effectStack?.map((l, index) => <div key={index}>{l}</div>)}
+    </div>
+    <div className="border-l-2 border-red-600 pl-2">
+      {error.stack?.map((l, index) => <div key={index}>{l}</div>)}
+    </div>
   </Card>
 );

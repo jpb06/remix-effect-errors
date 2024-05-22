@@ -26,10 +26,11 @@ export const effectLoader =
 
           // Computing spans duration ...
           const errorsWithSpanDuration = errors.map(
-            ({ errorType, message, stack, spans }) => ({
+            ({ errorType, message, stack, effectStacktrace, spans }) => ({
               type: errorType,
               message,
               stack,
+              effectStack: effectStacktrace,
               spans: getSpansDuration(spans),
             }),
           );
