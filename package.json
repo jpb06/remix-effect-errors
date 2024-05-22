@@ -2,13 +2,12 @@
   "name": "remix-effect-errors",
   "private": true,
   "sideEffects": false,
-  "type": "module",
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+    "start": "remix-serve ./build/server/index.js",
     "sync-icons": "pnpm generateReadmeIcons -h 50",
     "y": "tsx ./src/cool.ts"
   },
