@@ -1,7 +1,8 @@
 export type EffectError = {
   type: unknown;
   message: unknown;
-  stack: string | undefined;
+  stack: string[] | undefined;
+  effectStack: string[] | undefined;
   spans:
     | {
         name: string;

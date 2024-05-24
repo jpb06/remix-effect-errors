@@ -1,7 +1,8 @@
 export interface EffectError {
   type?: string;
   message: string;
-  stack?: string;
+  stack?: string[];
+  effectStack?: string[];
   spans?: {
     name: string;
     attributes: Record<string, unknown>;

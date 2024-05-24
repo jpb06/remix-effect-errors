@@ -19,11 +19,7 @@ const readUser = (name: string) =>
   );
 
 const parallelGet = (names: string[]) =>
-  Effect.withSpan('parallel-get', {
-    attributes: {
-      names,
-    },
-  })(
+  Effect.withSpan('parallel-get', { attributes: { names } })(
     Effect.all(names.map(readUser), {
       concurrency: 'unbounded',
     }),
