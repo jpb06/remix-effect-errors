@@ -1,9 +1,6 @@
 import { Effect } from 'effect';
 import { TaggedError } from 'effect/Data';
 
-const span = (name: string, attributes?: Record<string, unknown>) =>
-  Effect.withSpan(name, { attributes });
-
 class FetchError extends TaggedError('FetchError')<{
   cause?: unknown;
   message?: string;
@@ -19,7 +16,7 @@ interface Data {
   name: string;
 }
 
-const readUser = span('read-user')(
+const readUser = Effect.withSpan('read-user')(
   Effect.tryPromise<Data, FileError>({
     try: async () => await Promise.resolve({ id: 1, name: 'cool story bro' }),
     catch: (e) => new FileError({ cause: e }),
@@ -27,8 +24,10 @@ const readUser = span('read-user')(
 );
 
 const fetchTask = (userId: number) =>
-  span('fetch-user', {
-    userId,
+  Effect.withSpan('fetch-user', {
+    attributes: {
+      userId,
+    },
   })(
     Effect.tryPromise({
       try: async () =>
@@ -41,14 +40,14 @@ const fetchTask = (userId: number) =>
   );
 
 const unwrapResponseTask = (response: Response) =>
-  span('unwrap-fetch-user-response')(
+  Effect.withSpan('unwrap-fetch-user-response')(
     Effect.tryPromise({
       try: async () => (await response.json()) as Data,
       catch: (e) => new FetchError({ cause: e }),
     }),
   );
 
-export const fromPromiseTask = span('from-promise-task')(
+export const fromPromiseTask = Effect.withSpan('from-promise-task')(
   Effect.gen(function* () {
     const { id } = yield* readUser;
     const response = yield* fetchTask(id);

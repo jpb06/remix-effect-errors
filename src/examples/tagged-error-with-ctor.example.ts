@@ -8,7 +8,7 @@ interface Data {
 }
 
 class TaggedErrorWithErrorCtor extends TaggedError('OhNo') {
-  constructor(readonly error?: unknown) {
+  constructor(readonly error: unknown) {
     super();
   }
 }
@@ -16,7 +16,10 @@ class TaggedErrorWithErrorCtor extends TaggedError('OhNo') {
 const readUser = Effect.withSpan('read-user')(
   Effect.tryPromise<Data, TaggedErrorWithErrorCtor>({
     try: async () => await fs.readJson('./src/examples/data/yolo.json'),
-    catch: (e) => new TaggedErrorWithErrorCtor(e),
+    catch: (e) =>
+      e instanceof Error
+        ? new TaggedErrorWithErrorCtor(e.message)
+        : new TaggedErrorWithErrorCtor(e),
   }),
 );
 

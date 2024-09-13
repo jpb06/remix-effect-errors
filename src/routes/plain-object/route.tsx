@@ -1,12 +1,9 @@
 import { useLoaderData } from '@remix-run/react';
 import { Effect } from 'effect';
 
-import { Code } from '../../components/code/Code';
-import { plainObjectErrorTask } from '../../examples';
-import { effectLoader } from '../../server/effects/loader/effect-loader';
-
-import { ErrorBoundary as Boundary } from './../../components/error-boundary/ErrorBoundary';
-import { exampleString } from './example-string';
+import { plainObjectErrorTask } from '@examples';
+import { ErrorBoundary as Boundary } from '@components/routes/error-boundary';
+import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   Effect.withSpan('plain-object-example-loader', {
@@ -18,17 +15,7 @@ export const loader = effectLoader(({ request }) =>
   })(plainObjectErrorTask),
 );
 
-export const ErrorBoundary = () => (
-  <>
-    <Boundary />
-    <Code
-      title="Code sample raising this error"
-      errorIndexes={[4]}
-      code={exampleString}
-      className="mb-3"
-    />
-  </>
-);
+export const ErrorBoundary = () => <Boundary />;
 
 const PlainObjectExample = () => {
   const data = useLoaderData<typeof loader>();
