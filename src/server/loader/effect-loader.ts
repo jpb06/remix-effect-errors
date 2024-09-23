@@ -18,7 +18,8 @@ export const effectLoader =
             const errorsText = prettyPrint(cause, { stripCwd: false });
             console.error(errorsText);
 
-            const errorData = yield* captureErrors(cause);
+            console.info('cwd', process.cwd());
+            const errorData = yield* captureErrors(cause, {});
 
             return yield* Effect.succeed({
               _tag: 'error' as const,
