@@ -9,7 +9,7 @@ export const headerStyles = sva({
       fontWeight: 700,
       display: 'flex',
       paddingBottom: 2,
-      width: "max-content"
+      width: 'max-content',
     },
     title: {
       marginLeft: 1,
