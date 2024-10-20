@@ -20,6 +20,7 @@ export const collectErrorDetails = <E>(cause: Cause<E>) =>
       const mapFile = yield* getMapFile;
       const consumer = new SourceMapConsumer(mapFile);
 
+      console.log('VERCEL_BRANCH_URL', process.env.VERCEL_BRANCH_URL);
       const branch = process.env.VERCEL_BRANCH_URL ?? 'main';
       const errorsWithSources = yield* Effect.forEach(
         errors,
