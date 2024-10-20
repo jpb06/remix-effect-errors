@@ -11,8 +11,8 @@ import { getSources } from './logic/get-sources';
 export const collectErrorDetails = <E>(cause: Cause<E>) =>
   pipe(
     Effect.gen(function* () {
-      const branch = process.env.VERCEL_BRANCH_URL ?? 'main';
-      console.log('VERCEL_BRANCH_URL', process.env.VERCEL_BRANCH_URL);
+      const branch = process.env.VERCEL_GIT_COMMIT_REF ?? 'main';
+      console.log('VERCEL_GIT_COMMIT_REF', process.env.VERCEL_GIT_COMMIT_REF);
 
       // Serverside logging
       const errorsText = prettyPrint(cause, { stripCwd: false });
