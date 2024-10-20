@@ -1,4 +1,4 @@
-import { RecipeVariantProps, sva } from '@panda/css';
+import { type RecipeVariantProps, sva } from '@panda/css';
 
 export type TitleSize = NonNullable<
   RecipeVariantProps<typeof titleStyles>

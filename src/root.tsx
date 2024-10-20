@@ -1,6 +1,6 @@
 import { cssBundleHref } from '@remix-run/css-bundle';
-import type { LinksFunction } from '@remix-run/node';
 import { Outlet } from '@remix-run/react';
+import type { LinksFunction } from '@vercel/remix';
 
 import { ErrorBoundary as AppErrorBoundary } from '@components/routes/error-boundary';
 import { AppLayout } from './components/design-system/app-layout';
@@ -16,4 +16,6 @@ export const ErrorBoundary = AppErrorBoundary;
 export const Layout = AppLayout;
 
 const App = () => <Outlet />;
+
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default App;

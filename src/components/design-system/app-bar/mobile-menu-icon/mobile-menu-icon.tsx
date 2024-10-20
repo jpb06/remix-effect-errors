@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FunctionComponent, PropsWithChildren } from 'react';
+import type { FunctionComponent, PropsWithChildren } from 'react';
 
 type MobileMenuIconProps = FunctionComponent<
   PropsWithChildren<{

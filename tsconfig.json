@@ -29,7 +29,8 @@
 			"@theme/*": ["./src/theme/*"],
 			"@server/*": ["./src/server/*"],
 			"@examples": ["./src/examples/index.ts"],
-			"@panda/*": ["./styled-system/*"]
+			"@panda/*": ["./styled-system/*"],
+			"@types": ["./src/types/index.ts"]
 		},
 		// Vite takes care of building everything, not tsc.
 		"noEmit": true

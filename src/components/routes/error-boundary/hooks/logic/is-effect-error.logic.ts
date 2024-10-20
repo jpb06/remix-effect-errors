@@ -1,9 +1,9 @@
-import { CapturedErrors } from 'effect-errors';
+import type { EffectErrorWithSources } from '@types';
 
 type EffectError = {
   data: {
     type: 'effect';
-    data: CapturedErrors;
+    errors: EffectErrorWithSources[];
   };
 };
 

@@ -1,9 +1,9 @@
-import { FunctionComponent } from 'react';
-import { Box, styled } from '@panda/jsx';
-import { ErrorData } from 'effect-errors';
+import { Box } from '@panda/jsx';
+import type { FunctionComponent } from 'react';
 
 import { CodeFromEffectError } from '@components/design-system/code';
 import { MotionContainer } from '@components/design-system/motion-container';
+import type { EffectErrorWithSources } from '@types';
 
 import { effectErrorDetailsStyles } from './effect-error-details.styles';
 import { ErrorMessage } from './error-message';
@@ -11,7 +11,7 @@ import { ErrorSpansTree } from './error-spans-tree';
 
 type EffectErrorDetailsProps = {
   number: number;
-  error: ErrorData;
+  error: EffectErrorWithSources;
   hasSeveralErrors: boolean;
 };
 
@@ -35,14 +35,13 @@ export const EffectErrorDetails: FunctionComponent<EffectErrorDetailsProps> = ({
       <Box className={css.sourcesBorder}>
         <Box className={css.sources}>
           <span className={css.sourcesTitle}>Error related code</span>
-          {error.sources?.map(({ runPath, source }) =>
-            source ? (
-              <CodeFromEffectError
-                title={`.${/\/remix-effect-errors(\/src\/.*)/.exec(runPath)?.[1] ?? '?'}`}
-                code={source}
-              />
-            ) : null,
-          )}
+          {error.sources.map((source, index) => (
+            <CodeFromEffectError
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              key={index}
+              {...source}
+            />
+          ))}
         </Box>
       </Box>
     </Box>

@@ -1,6 +1,9 @@
-import { Link, LinkProps, useLocation, useMatches } from '@remix-run/react';
-import { FunctionComponent } from 'react';
-import { AppBarLinkSize, appBarLinkStyles } from './app-bar-link.styles';
+import type { LinkProps } from '@remix-run/react';
+import { Link, useLocation } from '@remix-run/react';
+import type { FunctionComponent } from 'react';
+
+import type { AppBarLinkSize } from './app-bar-link.styles';
+import { appBarLinkStyles } from './app-bar-link.styles';
 
 type AppBarLinkProps = LinkProps & {
   size?: AppBarLinkSize;

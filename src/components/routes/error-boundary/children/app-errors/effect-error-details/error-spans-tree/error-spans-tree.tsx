@@ -1,11 +1,12 @@
-import { ErrorData } from 'effect-errors';
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
+
+import type { EffectErrorWithSources } from '@types';
 
 import { errorSpansStyles } from './error-spans.styles';
 import { SpanDetails } from './span-details';
 
 type ErrorSpansTreeProps = {
-  error: ErrorData;
+  error: EffectErrorWithSources;
 };
 
 export const ErrorSpansTree: FunctionComponent<ErrorSpansTreeProps> = ({
@@ -18,6 +19,7 @@ export const ErrorSpansTree: FunctionComponent<ErrorSpansTreeProps> = ({
       <div className={css.xIcon}>&nbsp;</div>
       <ul className={css.spansList}>
         {error.spans?.map((span, spanNumber) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           <SpanDetails key={spanNumber} {...span} />
         ))}
       </ul>

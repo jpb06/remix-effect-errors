@@ -5,17 +5,22 @@ export const useMobileMenuClickAway = () => {
   const mobileMenuCheckboxRef = useRef<HTMLInputElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  const [mobileMenuState, setMobileMenuState] = useState<'open' | 'closed'>();
+  const [mobileIconMenuState, setMobileIconMenuState] = useState<
+    'open' | 'closed'
+  >();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      setMobileMenuState(
+      setMobileIconMenuState(
         mobileMenuCheckboxRef.current?.checked === true ? 'open' : 'closed',
       );
 
+      const menuButtonContainsTarget =
+        mobileMenuButtonRef.current?.contains(event.target as HTMLElement) ??
+        false;
+
       if (
-        !mobileMenuRef.current?.contains(event.target as HTMLElement) &&
-        !mobileMenuButtonRef.current?.contains(event.target as HTMLElement) &&
+        menuButtonContainsTarget === false &&
         mobileMenuCheckboxRef.current?.checked === true
       ) {
         mobileMenuCheckboxRef.current?.click();
@@ -27,12 +32,12 @@ export const useMobileMenuClickAway = () => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [mobileMenuRef]);
+  }, []);
 
   return {
     mobileMenuButtonRef,
     mobileMenuCheckboxRef,
     mobileMenuRef,
-    mobileMenuState,
+    mobileIconMenuState,
   };
 };

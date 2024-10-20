@@ -127,7 +127,8 @@ dist
 .pnp.*
 
 # custom
-build
+/build
+/src/temp
 .vercel
 
 ## Panda

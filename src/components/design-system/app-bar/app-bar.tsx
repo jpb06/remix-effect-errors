@@ -4,8 +4,8 @@ import { AppBarLink } from '@components/design-system/app-bar-link';
 import { cx } from '@panda/css';
 import { Box } from '@panda/jsx';
 import { Link } from '@remix-run/react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { FunctionComponent, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import type { FunctionComponent } from 'react';
 import { match } from 'ts-pattern';
 import JamGithub from '~icons/jam/github';
 import MiMenu from '~icons/mi/menu';
@@ -22,7 +22,7 @@ export const AppBar: FunctionComponent = () => {
     mobileMenuButtonRef,
     mobileMenuCheckboxRef,
     mobileMenuRef,
-    mobileMenuState,
+    mobileIconMenuState,
   } = useMobileMenuClickAway();
 
   return (
@@ -40,7 +40,7 @@ export const AppBar: FunctionComponent = () => {
           ref={mobileMenuButtonRef}
         >
           <AnimatePresence mode="wait" initial={false}>
-            {match(mobileMenuState)
+            {match(mobileIconMenuState)
               .with('open', () => (
                 <MobileMenuIcon rotate={180}>
                   <SystemUiconsMidpoint className={css.icon} />
@@ -71,14 +71,24 @@ export const AppBar: FunctionComponent = () => {
       <div className={css.desktopMenuItems}>
         <div>
           {errorTypesMenuItems.map(({ href, label }) => (
-            <AppBarLink key={href} to={href} size="narrow">
+            <AppBarLink
+              key={href}
+              to={href}
+              size="narrow"
+              // onClick={() => setMobileMenuState('closed')}
+            >
               {label}
             </AppBarLink>
           ))}
         </div>
         <div>
           {useCasesMenuItems.map(({ href, label }) => (
-            <AppBarLink key={href} to={href} size="narrow">
+            <AppBarLink
+              key={href}
+              to={href}
+              size="narrow"
+              // onClick={() => setMobileMenuState('closed')}
+            >
               {label}
             </AppBarLink>
           ))}

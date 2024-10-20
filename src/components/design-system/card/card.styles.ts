@@ -13,14 +13,14 @@ export const createStyles = sva({
       flexDirection: 'column',
       borderRadius: '2xl',
       overflow: 'clip',
-      color: "slate.200",
+      color: 'slate.200',
       bgGradient: 'to-tl',
       gradientFrom: 'indigo.950',
       gradientToPosition: '90%',
       gradientTo: 'cyan.950',
       shadow: 'xl',
       _focus: {
-        outline: `2px solid transparent`,
+        outline: '2px solid transparent',
         outlineOffset: 0.5,
       },
       _hover: {

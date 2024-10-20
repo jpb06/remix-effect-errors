@@ -1,10 +1,12 @@
 import { cx } from '@panda/css';
 import hljs from 'highlight.js/lib/common';
 import 'highlight.js/styles/github-dark.css';
-import { FunctionComponent } from 'react';
-import { PropsWithClassName } from 'src/types/props-with-classname.type';
+import type { FunctionComponent } from 'react';
+
+import type { PropsWithClassName } from '@types';
+
 import { MotionContainer } from '../motion-container';
-import { CodeType, codeStyles } from './code.styles';
+import { type CodeType, codeStyles } from './code.styles';
 import { Header } from './header';
 
 type CodeProps = PropsWithClassName<{
@@ -28,9 +30,11 @@ export const CodeFromString: FunctionComponent<CodeProps> = ({
       <Header title={title} />
       {code.split('\n').map((line, index) => (
         <pre
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           key={index}
           data-prefix={index + 1}
           className={`${errorIndexes?.includes(index + 1) ? css.errorLine : undefined}`}
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{
             __html: hljs.highlightAuto(line, ['xml', 'typescript']).value,
           }}

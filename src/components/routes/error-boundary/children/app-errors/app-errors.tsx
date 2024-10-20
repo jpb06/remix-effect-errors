@@ -1,19 +1,13 @@
+import { Box } from '@panda/jsx';
 import { match } from 'ts-pattern';
 
-import type { ErrorsDetails } from '../../hooks/useErrorDetails';
-
-import { Box } from '@panda/jsx';
-import { ErrorData } from 'effect-errors';
-import { EffectErrorDetails } from './effect-error-details/effect-error-details';
-import { NodeErrorDetails } from './node-error-details';
+import type { ErrorsDetails } from '../../hooks/use-error-details';
 import { appErrorStyles } from './app-error.styles';
+import { EffectErrorDetails } from './effect-error-details/effect-error-details';
+import { isEffectErrors } from './logic/is-effect-error.logic';
+import { NodeErrorDetails } from './node-error-details';
 
 type AppErrorsProps = Pick<ErrorsDetails, '_tag' | 'path' | 'errors'>;
-
-const isEffectErrors = (
-  arg: AppErrorsProps,
-): arg is { _tag: 'effect'; path: string; errors: ErrorData[] } =>
-  arg._tag === 'effect';
 
 export const AppErrors = (props: AppErrorsProps) => {
   const css = appErrorStyles();
@@ -26,6 +20,7 @@ export const AppErrors = (props: AppErrorsProps) => {
         .when(isEffectErrors, ({ errors }) =>
           errors.map((error, index) => (
             <EffectErrorDetails
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               key={index}
               number={index + 1}
               error={error}
@@ -36,6 +31,7 @@ export const AppErrors = (props: AppErrorsProps) => {
         .otherwise(({ errors }) =>
           errors.map((error, index) => (
             <NodeErrorDetails
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               key={index}
               number={index + 1}
               hasSeveralErrors={hasSeveralErrors}

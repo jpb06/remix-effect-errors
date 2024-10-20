@@ -1,4 +1,6 @@
-import { CapturedErrors } from 'effect-errors';
+import type { CapturedErrors } from 'effect-errors';
+
+import type { EffectErrorWithSources } from '@types';
 
 export interface EffectLoaderSuccess<A> {
   _tag: 'success';
@@ -7,5 +9,6 @@ export interface EffectLoaderSuccess<A> {
 
 export interface EffectLoaderError {
   _tag: 'error';
-  data: CapturedErrors;
+  interrupted: CapturedErrors['interrupted'];
+  errors: EffectErrorWithSources[];
 }

@@ -1,9 +1,9 @@
 import { Card } from '@components/design-system/card';
 import { Title } from '@components/design-system/title';
 
-import type { ErrorsDetails } from '../../hooks/useErrorDetails';
+import type { ErrorsDetails } from '../../hooks/use-error-details';
 
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import TeenyiconsMoodFrownSolid from '~icons/teenyicons/mood-frown-solid';
 import { errorBoundarySummaryStyles } from './summary.styles';
 

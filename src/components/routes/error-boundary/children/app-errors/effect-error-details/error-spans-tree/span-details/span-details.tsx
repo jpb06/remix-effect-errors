@@ -1,5 +1,5 @@
-import { ErrorSpan } from 'effect-errors';
-import { FunctionComponent } from 'react';
+import type { ErrorSpan } from 'effect-errors';
+import type { FunctionComponent } from 'react';
 import { spansDetailsStyles } from './span-details.styles';
 
 type SpanDetailsProps = ErrorSpan;
@@ -24,6 +24,7 @@ export const SpanDetails: FunctionComponent<SpanDetailsProps> = ({
           {Object.entries(attributes)
             .filter(([, value]) => value !== null)
             .map(([key, value], attributeNumber) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               <div key={attributeNumber}>
                 <span>{key}</span>: {JSON.stringify(value)}
               </div>

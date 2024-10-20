@@ -1,4 +1,4 @@
-import { Effect } from 'effect';
+import { Effect, pipe } from 'effect';
 import { TaggedError } from 'effect/Data';
 
 class CustomError extends TaggedError('CustomError')<{
@@ -6,15 +6,21 @@ class CustomError extends TaggedError('CustomError')<{
   message?: string;
 }> {}
 
-const subTask = Effect.withSpan('sub-task', {
-  attributes: {
-    cool: true,
-    yolo: 'bro',
-  },
-})(Effect.fail(new CustomError({ cause: 'Oh no! I failed!' })));
+const subTask = pipe(
+  Effect.fail(new CustomError({ cause: 'Oh no! I failed!' })),
+  Effect.withSpan('sub-task', {
+    attributes: {
+      cool: true,
+      yolo: 'bro',
+    },
+  }),
+);
 
-export const taggedErrorTask = Effect.withSpan('tagged-error-task', {
-  attributes: {
-    struff: 'struff',
-  },
-})(subTask);
+export const taggedErrorTask = pipe(
+  subTask,
+  Effect.withSpan('tagged-error-task', {
+    attributes: {
+      struff: 'struff',
+    },
+  }),
+);

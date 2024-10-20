@@ -1,18 +1,21 @@
 import { useLoaderData } from '@remix-run/react';
-import { Effect } from 'effect';
+import { Effect, pipe } from 'effect';
 
-import { plainObjectErrorTask } from '@examples';
 import { ErrorBoundary as Boundary } from '@components/routes/error-boundary';
+import { plainObjectErrorTask } from '@examples';
 import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
-  Effect.withSpan('plain-object-example-loader', {
-    attributes: {
-      url: request.url,
-      method: request.method,
-      body: request.body,
-    },
-  })(plainObjectErrorTask),
+  pipe(
+    plainObjectErrorTask,
+    Effect.withSpan('plain-object-example-loader', {
+      attributes: {
+        url: request.url,
+        method: request.method,
+        body: request.body,
+      },
+    }),
+  ),
 );
 
 export const ErrorBoundary = () => <Boundary />;
@@ -22,4 +25,6 @@ const PlainObjectExample = () => {
 
   return <>{data}</>;
 };
+
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default PlainObjectExample;

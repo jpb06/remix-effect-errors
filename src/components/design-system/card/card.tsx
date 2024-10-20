@@ -1,9 +1,9 @@
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
 import { css, cx } from '@panda/css';
+import type { PropsWithStyles } from '@types';
 
-import { PropsWithStyles } from 'src/types/props-with-styles.type';
-import { MotionContainer } from '../motion-container/MotionContainer';
+import { MotionContainer } from '../motion-container/motion-container';
 import { createStyles } from './card.styles';
 
 type CardProps = PropsWithChildren<PropsWithStyles>;

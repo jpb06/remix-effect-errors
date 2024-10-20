@@ -1,4 +1,5 @@
-import { RecipeVariantProps, sva } from '@panda/css';
+import { sva } from '@panda/css';
+import type { RecipeVariantProps } from '@panda/css';
 
 export type WindowControlMockupColor = NonNullable<
   RecipeVariantProps<typeof windowControlMockupStyles>

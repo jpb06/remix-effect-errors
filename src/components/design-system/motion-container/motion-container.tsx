@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-import { PropsWithClassName } from 'src/types/props-with-classname.type';
+import type { PropsWithClassName } from '@types';
+
 import { defaultTransition } from './logic/default-transition.logic';
 
 type MotionContainerProps = PropsWithClassName<PropsWithChildren>;

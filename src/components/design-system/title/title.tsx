@@ -1,8 +1,9 @@
+import { cx } from '@panda/css';
 import type { PropsWithChildren } from 'react';
 
-import { cx } from '@panda/css';
-import { PropsWithClassName } from 'src/types/props-with-classname.type';
-import { TitleSize, titleStyles } from './title.styles';
+import type { PropsWithClassName } from '@types';
+
+import { type TitleSize, titleStyles } from './title.styles';
 
 type TitleProps = PropsWithChildren<
   PropsWithClassName<{

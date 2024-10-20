@@ -1,5 +1,5 @@
 import { Links, Meta, Scripts, ScrollRestoration } from '@remix-run/react';
-import { FunctionComponent, PropsWithChildren } from 'react';
+import type { FunctionComponent, PropsWithChildren } from 'react';
 import { AppBar } from '../app-bar';
 import { appLayoutStyles } from './app-layout.styles';
 

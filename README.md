@@ -8,6 +8,14 @@ Toying with [remix](https://remix.run/docs/en/main) and [effect](https://effect.
 
 <!-- readme-package-icons end -->
 
+TODO
+
+- Bump version
+- Build with sourcemaps
+- Upload src + build
+- Trigger vercel build (without sourcemaps)
+- 
+
 ## ⚡ So how does that work?
 
 We basically need two things on remix to achieve our goal:

@@ -4,7 +4,6 @@ export const appLayoutStyles = sva({
   slots: ['html', 'body'],
   base: {
     html: {
-      placeItems: 'center',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       bgGradient: 'to-tr',

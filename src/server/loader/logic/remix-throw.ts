@@ -1,7 +1,7 @@
 import { json } from '@remix-run/server-runtime';
 import { match } from 'ts-pattern';
 
-import {
+import type {
   EffectLoaderError,
   EffectLoaderSuccess,
 } from '../types/effect-loader.types';
@@ -18,11 +18,11 @@ export const remixThrow = <A>(input: RemixThrowInput<A>) =>
       (p) => effectHasSucceeded(p),
       ({ data }) => data,
     )
-    .otherwise(({ data }) => {
+    .otherwise(({ errors }) => {
       throw json(
         {
           type: 'effect',
-          data,
+          errors,
         },
         {
           status: 500,

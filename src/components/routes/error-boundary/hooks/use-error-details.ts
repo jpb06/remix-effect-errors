@@ -4,8 +4,9 @@ import {
   useRouteError,
 } from '@remix-run/react';
 
-import { ErrorData } from 'effect-errors';
-import { isEffectError } from '../logic/is-effect-error.logic';
+import type { EffectErrorWithSources } from '@types';
+
+import { isEffectError } from './logic/is-effect-error.logic';
 
 export type ErrorsDetails =
   | {
@@ -18,7 +19,7 @@ export type ErrorsDetails =
   | {
       _tag: 'effect';
       path: string;
-      errors: ErrorData[];
+      errors: EffectErrorWithSources[];
     };
 
 export const useErrorDetails = (): ErrorsDetails => {
@@ -29,7 +30,7 @@ export const useErrorDetails = (): ErrorsDetails => {
     return {
       _tag: 'effect' as const,
       path: pathname,
-      errors: error.data.data.errors,
+      errors: error.data.errors,
     };
   }
 

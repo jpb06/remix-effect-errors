@@ -1,13 +1,14 @@
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 
-import { ErrorNumber } from './error-number';
-import { ErrorData } from 'effect-errors';
+import type { EffectErrorWithSources } from '@types';
+
 import { isObject } from 'effect/Predicate';
 import { errorMessageStyles } from './error-message.styles';
+import { ErrorNumber } from './error-number';
 
 type ErrorMessageProps = {
   number: number;
-  error: ErrorData;
+  error: EffectErrorWithSources;
   hasSeveralErrors: boolean;
 };
 

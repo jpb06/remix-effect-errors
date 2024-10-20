@@ -1,4 +1,4 @@
-import { Effect } from 'effect';
+import { Effect, pipe } from 'effect';
 import { TaggedError } from 'effect/Data';
 import fs from 'fs-extra';
 
@@ -13,7 +13,7 @@ class TaggedErrorWithErrorCtor extends TaggedError('OhNo') {
   }
 }
 
-const readUser = Effect.withSpan('read-user')(
+const readUser = pipe(
   Effect.tryPromise<Data, TaggedErrorWithErrorCtor>({
     try: async () => await fs.readJson('./src/examples/data/yolo.json'),
     catch: (e) =>
@@ -21,7 +21,10 @@ const readUser = Effect.withSpan('read-user')(
         ? new TaggedErrorWithErrorCtor(e.message)
         : new TaggedErrorWithErrorCtor(e),
   }),
+  Effect.withSpan('read-user'),
 );
 
-export const taggedErrorWithCtorTask =
-  Effect.withSpan('tagged-error-task')(readUser);
+export const taggedErrorWithCtorTask = pipe(
+  readUser,
+  Effect.withSpan('tagged-error-task'),
+);

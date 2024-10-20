@@ -6,14 +6,15 @@
 
 import { PassThrough } from 'node:stream';
 
-import type { AppLoadContext, EntryContext } from '@remix-run/node';
 import { createReadableStreamFromReadable } from '@remix-run/node';
 import { RemixServer } from '@remix-run/react';
+import type { AppLoadContext, EntryContext } from '@vercel/remix';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 
 const ABORT_DELAY = 5_000;
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
@@ -73,6 +74,7 @@ function handleBotRequest(
           reject(error);
         },
         onError(error: unknown) {
+          // biome-ignore lint/style/noParameterAssign: <explanation>
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll
@@ -123,6 +125,7 @@ function handleBrowserRequest(
           reject(error);
         },
         onError(error: unknown) {
+          // biome-ignore lint/style/noParameterAssign: <explanation>
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll

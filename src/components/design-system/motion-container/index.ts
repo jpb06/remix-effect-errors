@@ -1,1 +1,1 @@
-export * from './MotionContainer';
+export * from './motion-container';

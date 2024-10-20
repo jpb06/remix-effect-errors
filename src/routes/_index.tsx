@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/node';
+//import type { MetaFunction } from '@remix-run/node';
 
 import { IndexPage } from '@components/routes/index-page';
 
@@ -9,4 +9,5 @@ import { IndexPage } from '@components/routes/index-page';
 
 const Index = IndexPage;
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default Index;
