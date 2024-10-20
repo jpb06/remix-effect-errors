@@ -11,17 +11,18 @@ import { getSources } from './logic/get-sources';
 export const collectErrorDetails = <E>(cause: Cause<E>) =>
   pipe(
     Effect.gen(function* () {
+      const branch = process.env.VERCEL_BRANCH_URL ?? 'main';
+      console.log('VERCEL_BRANCH_URL', process.env.VERCEL_BRANCH_URL);
+
       // Serverside logging
       const errorsText = prettyPrint(cause, { stripCwd: false });
       console.error(errorsText);
 
       const { errors, interrupted } = yield* captureErrors(cause, {});
 
-      const mapFile = yield* getMapFile;
+      const mapFile = yield* getMapFile(branch);
       const consumer = new SourceMapConsumer(mapFile);
 
-      console.log('VERCEL_BRANCH_URL', process.env.VERCEL_BRANCH_URL);
-      const branch = process.env.VERCEL_BRANCH_URL ?? 'main';
       const errorsWithSources = yield* Effect.forEach(
         errors,
         ({ location, sources, ...errorData }) =>
