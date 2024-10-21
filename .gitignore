@@ -51,9 +51,6 @@ web_modules/
 # Optional npm cache directory
 .npm
 
-# Optional eslint cache
-.eslintcache
-
 # Optional stylelint cache
 .stylelintcache
 
@@ -130,5 +127,10 @@ dist
 .pnp.*
 
 # custom
-build
+/build
+/src/temp
 .vercel
+
+## Panda
+styled-system
+styled-system-studio

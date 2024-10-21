@@ -1,38 +1,29 @@
 import { useLoaderData } from '@remix-run/react';
-import { Effect } from 'effect';
+import { Effect, pipe } from 'effect';
 
-import { Code } from '../../components/code/Code';
-import { ErrorBoundary as Boundary } from '../../components/error-boundary/ErrorBoundary';
-import { unknownErrorTask } from '../../examples';
-import { effectLoader } from '../../server/effects/loader/effect-loader';
-
-import { exampleString } from './example-string';
+import { ErrorBoundary as Boundary } from '@components/routes/error-boundary';
+import { unknownErrorTask } from '@examples';
+import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
-  Effect.withSpan('unknown-error-example-loader', {
-    attributes: {
-      url: request.url,
-      method: request.method,
-      body: request.body,
-    },
-  })(unknownErrorTask),
+  pipe(
+    unknownErrorTask,
+    Effect.withSpan('unknown-error-example-loader', {
+      attributes: {
+        url: request.url,
+        method: request.method,
+        body: request.body,
+      },
+    }),
+  ),
 );
 
-export const ErrorBoundary = () => (
-  <>
-    <Boundary />
-    <Code
-      title="Code sample raising this error"
-      errorIndexes={[5]}
-      code={exampleString}
-      className="mb-3"
-    />
-  </>
-);
+export const ErrorBoundary = () => <Boundary />;
 
 const UnknownError = () => {
   const data = useLoaderData<typeof loader>();
 
   return <>{data}</>;
 };
+
 export default UnknownError;

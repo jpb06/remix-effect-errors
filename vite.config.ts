@@ -8,6 +8,12 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 installGlobals();
 
 export default defineConfig({
+  build: {
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: true,
+    copyPublicDir: true,
+  },
   plugins: [
     remix({
       presets: [vercelPreset()],
