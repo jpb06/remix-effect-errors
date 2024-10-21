@@ -24,7 +24,7 @@ export const SpanDetails: FunctionComponent<SpanDetailsProps> = ({
           {Object.entries(attributes)
             .filter(([, value]) => value !== null)
             .map(([key, value], attributeNumber) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              // biome-ignore lint/suspicious/noArrayIndexKey: no id
               <div key={attributeNumber}>
                 <span>{key}</span>: {JSON.stringify(value)}
               </div>

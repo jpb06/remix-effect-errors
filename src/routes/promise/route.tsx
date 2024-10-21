@@ -26,5 +26,4 @@ const PromiseExample = () => {
   return <>{JSON.stringify(data)}</>;
 };
 
-// biome-ignore lint/style/noDefaultExport: <explanation>
 export default PromiseExample;

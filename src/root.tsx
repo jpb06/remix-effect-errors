@@ -17,5 +17,4 @@ export const Layout = AppLayout;
 
 const App = () => <Outlet />;
 
-// biome-ignore lint/style/noDefaultExport: <explanation>
 export default App;

@@ -19,7 +19,7 @@ export const ErrorSpansTree: FunctionComponent<ErrorSpansTreeProps> = ({
       <div className={css.xIcon}>&nbsp;</div>
       <ul className={css.spansList}>
         {error.spans?.map((span, spanNumber) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: no id
           <SpanDetails key={spanNumber} {...span} />
         ))}
       </ul>

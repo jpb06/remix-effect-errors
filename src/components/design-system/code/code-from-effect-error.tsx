@@ -22,18 +22,21 @@ export const CodeFromEffectError: FunctionComponent<
   return (
     <MotionContainer className={cx(css.root, className)}>
       <Header title={`./${filePath} ${name !== null ? `(${name})` : ''}`} />
-      {excerpt.map((code, index) => (
-        <pre
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-          key={index}
-          data-prefix={start + index + 1}
-          className={start + index + 1 === line ? css.errorLine : undefined}
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-          dangerouslySetInnerHTML={{
-            __html: hljs.highlightAuto(code, ['xml', 'typescript']).value,
-          }}
-        />
-      ))}
+      {excerpt.map((code, index) => {
+        const lineNumber = start + index + 1;
+        return (
+          <pre
+            // biome-ignore lint/suspicious/noArrayIndexKey: no id
+            key={index}
+            data-prefix={lineNumber}
+            className={lineNumber === line ? css.errorLine : undefined}
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: error code
+            dangerouslySetInnerHTML={{
+              __html: hljs.highlightAuto(code, ['xml', 'typescript']).value,
+            }}
+          />
+        );
+      })}
     </MotionContainer>
   );
 };

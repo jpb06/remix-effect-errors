@@ -215,5 +215,24 @@
       "semicolons": "always",
       "indentStyle": "space"
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": [
+        "./vite-sourcemaps.config.ts",
+        "./vite.config.ts",
+        "./src/routes/**/route.tsx",
+        "./src/root.tsx",
+        "./src/routes/_index.tsx",
+        "./src/entry.server.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    }
+  ]
 }

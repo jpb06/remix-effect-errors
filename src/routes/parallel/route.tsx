@@ -26,5 +26,4 @@ const ParallelExample = () => {
   return <>{data}</>;
 };
 
-// biome-ignore lint/style/noDefaultExport: <explanation>
 export default ParallelExample;

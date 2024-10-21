@@ -14,7 +14,6 @@ import { renderToPipeableStream } from 'react-dom/server';
 
 const ABORT_DELAY = 5_000;
 
-// biome-ignore lint/style/noDefaultExport: <explanation>
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
@@ -74,7 +73,7 @@ function handleBotRequest(
           reject(error);
         },
         onError(error: unknown) {
-          // biome-ignore lint/style/noParameterAssign: <explanation>
+          // biome-ignore lint/style/noParameterAssign: /
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll
@@ -125,7 +124,7 @@ function handleBrowserRequest(
           reject(error);
         },
         onError(error: unknown) {
-          // biome-ignore lint/style/noParameterAssign: <explanation>
+          // biome-ignore lint/style/noParameterAssign: /
           responseStatusCode = 500;
           // Log streaming rendering errors from inside the shell.  Don't log
           // errors encountered during initial shell rendering since they'll

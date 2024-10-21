@@ -20,7 +20,7 @@ export const AppErrors = (props: AppErrorsProps) => {
         .when(isEffectErrors, ({ errors }) =>
           errors.map((error, index) => (
             <EffectErrorDetails
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              // biome-ignore lint/suspicious/noArrayIndexKey: no id
               key={index}
               number={index + 1}
               error={error}
@@ -31,7 +31,7 @@ export const AppErrors = (props: AppErrorsProps) => {
         .otherwise(({ errors }) =>
           errors.map((error, index) => (
             <NodeErrorDetails
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              // biome-ignore lint/suspicious/noArrayIndexKey: no id
               key={index}
               number={index + 1}
               hasSeveralErrors={hasSeveralErrors}

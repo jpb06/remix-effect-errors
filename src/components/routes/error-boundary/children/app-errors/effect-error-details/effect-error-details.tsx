@@ -37,7 +37,7 @@ export const EffectErrorDetails: FunctionComponent<EffectErrorDetailsProps> = ({
           <span className={css.sourcesTitle}>Error related code</span>
           {error.sources.map((source, index) => (
             <CodeFromEffectError
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+              // biome-ignore lint/suspicious/noArrayIndexKey: no id
               key={index}
               {...source}
             />

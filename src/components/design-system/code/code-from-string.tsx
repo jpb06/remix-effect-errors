@@ -30,11 +30,11 @@ export const CodeFromString: FunctionComponent<CodeProps> = ({
       <Header title={title} />
       {code.split('\n').map((line, index) => (
         <pre
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: no id
           key={index}
           data-prefix={index + 1}
           className={`${errorIndexes?.includes(index + 1) ? css.errorLine : undefined}`}
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: error code
           dangerouslySetInnerHTML={{
             __html: hljs.highlightAuto(line, ['xml', 'typescript']).value,
           }}
