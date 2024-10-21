@@ -1,0 +1,46 @@
+name: ⚡ Upload sourcemaps
+
+on:
+  workflow_run:
+    workflows: ['⚡ Integration checks']
+    branches:
+      - '**' 
+    types:
+      - completed
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  lint:
+    name: ⚙️ Build app
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          # cache: 'bun'
+          cache-dependency-path: ./package.json
+
+      - name: 📥 Install deps
+        run: bun install --frozen-lockfile
+
+      - name: ⚙️ Build
+        run: bun build-sourcemaps
+
+      - name: 📡 upload-sourcemap
+        run: bun upload-sourcemaps 
+
+

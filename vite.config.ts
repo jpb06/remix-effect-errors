@@ -7,7 +7,14 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 installGlobals();
 
+// biome-ignore lint/style/noDefaultExport: <explanation>
 export default defineConfig({
+  build: {
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: true,
+    copyPublicDir: true,
+  },
   plugins: [
     remix({
       presets: [vercelPreset()],

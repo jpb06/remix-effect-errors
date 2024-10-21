@@ -1,8 +1,12 @@
-import { Effect } from 'effect';
+import { Effect, pipe } from 'effect';
 import fs from 'fs-extra';
 
-const readUser = Effect.withSpan('read-user')(
+const readUser = pipe(
   Effect.tryPromise(async () => await fs.readJson('cool.ts')),
+  Effect.withSpan('read-user'),
 );
 
-export const unknownErrorTask = Effect.withSpan('unknown-error-task')(readUser);
+export const unknownErrorTask = pipe(
+  readUser,
+  Effect.withSpan('unknown-error-task'),
+);
