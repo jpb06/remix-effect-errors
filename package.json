@@ -25,7 +25,7 @@
     "@remix-run/serve": "^2.13.1",
     "@remix-run/server-runtime": "^2.13.1",
     "effect": "^3.9.2",
-    "effect-cloudflare-r2-layer": "^1.0.19",
+    "effect-cloudflare-r2-layer": "^1.0.20",
     "effect-errors": "^1.7.19",
     "fs-extra": "^11.2.0",
     "highlight.js": "^11.10.0",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@effect/platform": "^0.68.6",
-    "@iconify/json": "^2.2.261",
+    "@iconify/json": "^2.2.262",
     "@pandacss/dev": "^0.47.0",
     "@remix-run/dev": "^2.13.1",
     "@svgr/core": "^8.1.0",
