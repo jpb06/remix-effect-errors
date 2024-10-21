@@ -224,7 +224,8 @@
         "./src/routes/**/route.tsx",
         "./src/root.tsx",
         "./src/routes/_index.tsx",
-        "./src/entry.server.tsx"
+        "./src/entry.server.tsx",
+        "./panda.config.ts"
       ],
       "linter": {
         "rules": {

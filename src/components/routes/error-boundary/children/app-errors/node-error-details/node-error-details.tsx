@@ -1,4 +1,5 @@
 import { Card } from '@components/design-system/card';
+
 import { ErrorNumber } from '../effect-error-details/error-message/error-number/error-number';
 import { nodeErrorDetailsStyles } from './node-error-details.styles';
 

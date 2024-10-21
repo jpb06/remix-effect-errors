@@ -1,4 +1,5 @@
 import type { FunctionComponent } from 'react';
+
 import { headerStyles } from './header.styles';
 import { WindowControlMockup } from './window-control-mockup';
 

@@ -18,4 +18,5 @@ export const ensureBucket = pipe(
       },
     }),
   ),
+  Effect.withSpan('ensure-bucket'),
 );

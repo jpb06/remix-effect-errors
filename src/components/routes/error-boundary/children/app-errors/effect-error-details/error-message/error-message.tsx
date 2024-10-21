@@ -1,8 +1,8 @@
+import { isObject } from 'effect/Predicate';
 import type { FunctionComponent } from 'react';
 
 import type { EffectErrorWithSources } from '@types';
 
-import { isObject } from 'effect/Predicate';
 import { errorMessageStyles } from './error-message.styles';
 import { ErrorNumber } from './error-number';
 

@@ -1,4 +1,4 @@
-export const effectLoaderCode = `import { type LoaderFunctionArgs } from '@remix-run/server-runtime';sssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+export const effectLoaderCode = `import { type LoaderFunctionArgs } from '@remix-run/server-runtime';
 import { Effect, pipe } from 'effect';
 import { captureErrors, prettyPrint } from 'effect-errors';
 

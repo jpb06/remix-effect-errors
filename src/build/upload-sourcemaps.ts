@@ -15,6 +15,7 @@ const task = pipe(
     console.info(`✅ mapfile uploaded for branch '${branch}'`);
   }),
   Effect.provide(CloudflareR2StorageLayerLive),
+  Effect.withSpan('upload-sourcemaps'),
 );
 
 await runPromise(task);
