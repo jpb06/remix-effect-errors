@@ -17,13 +17,13 @@ permissions:
   contents: read
 
 jobs:
-  env:
-    CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-    R2_DOCUMENTS_ACCESS_KEY_ID: ${{ secrets.R2_DOCUMENTS_ACCESS_KEY_ID }}
-    R2_DOCUMENTS_SECRET_ACCESS_KEY: ${{ secrets.R2_DOCUMENTS_SECRET_ACCESS_KEY }}
   uploadsourcemaps:
     name: ⚙️ Build app
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      R2_DOCUMENTS_ACCESS_KEY_ID: ${{ secrets.R2_DOCUMENTS_ACCESS_KEY_ID }}
+      R2_DOCUMENTS_SECRET_ACCESS_KEY: ${{ secrets.R2_DOCUMENTS_SECRET_ACCESS_KEY }}
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
