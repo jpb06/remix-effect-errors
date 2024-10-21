@@ -1,5 +1,3 @@
-import DotenvFlow from 'dotenv-flow';
-DotenvFlow.config();
 import { Effect, pipe } from 'effect';
 import { CloudflareR2StorageLayerLive } from 'effect-cloudflare-r2-layer';
 import { runPromise } from 'effect-errors';
