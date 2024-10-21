@@ -3,6 +3,8 @@ name: ⚡ Upload sourcemaps
 on:
   workflow_run:
     workflows: ['⚡ Integration checks']
+    branches:
+      - '**' 
     types:
       - completed
 
