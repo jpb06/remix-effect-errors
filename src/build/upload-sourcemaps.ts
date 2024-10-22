@@ -7,6 +7,7 @@ import { ensureBucket, uploadServerIndex } from './dependencies/r2';
 
 const task = pipe(
   Effect.gen(function* () {
+    console.info('YOLO', process.env.YOLO);
     yield* ensureBucket;
 
     const branch = yield* getBranch;
