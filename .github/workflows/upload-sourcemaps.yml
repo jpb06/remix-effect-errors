@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 jobs:
-  lint:
+  sourcemaps-upload:
     name: ⚙️ Build app
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +26,8 @@ jobs:
 
       - name: 📦 Setup bun
         uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: ⎔ Setup node
         uses: actions/setup-node@v4
@@ -41,6 +43,11 @@ jobs:
         run: bun build-sourcemaps
 
       - name: 📡 upload-sourcemap
-        run: bun upload-sourcemaps 
+        env:
+          YOLO: cool
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_DOCUMENTS_ACCESS_KEY_ID: ${{ secrets.R2_DOCUMENTS_ACCESS_KEY_ID }}
+          R2_DOCUMENTS_SECRET_ACCESS_KEY: ${{ secrets.R2_DOCUMENTS_SECRET_ACCESS_KEY }}
+        run: bun run upload-sourcemaps 
 
 
