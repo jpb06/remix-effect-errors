@@ -47,6 +47,6 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           R2_DOCUMENTS_ACCESS_KEY_ID: ${{ secrets.R2_DOCUMENTS_ACCESS_KEY_ID }}
           R2_DOCUMENTS_SECRET_ACCESS_KEY: ${{ secrets.R2_DOCUMENTS_SECRET_ACCESS_KEY }}
-        run: bun upload-sourcemaps 
+        run: bun run upload-sourcemaps 
 
 
