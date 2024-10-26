@@ -48,10 +48,11 @@ export const spansDetailsStyles = sva({
     },
     duration: {
       marginLeft: '-20px',
+      color: 'yellow.400',
     },
     attributes: {
       marginLeft: '-20px',
-      color: 'emerald.500',
+      color: 'slate.100',
     },
   },
 });

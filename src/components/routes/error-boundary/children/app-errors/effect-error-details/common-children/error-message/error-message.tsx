@@ -1,3 +1,4 @@
+import type { ErrorData } from 'effect-errors';
 import { isObject } from 'effect/Predicate';
 import type { FunctionComponent } from 'react';
 
@@ -8,7 +9,7 @@ import { ErrorNumber } from './error-number';
 
 type ErrorMessageProps = {
   number: number;
-  error: EffectErrorWithSources;
+  error: EffectErrorWithSources | ErrorData;
   hasSeveralErrors: boolean;
 };
 

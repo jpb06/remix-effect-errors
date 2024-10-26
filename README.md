@@ -8,14 +8,6 @@ Toying with [remix](https://remix.run/docs/en/main) and [effect](https://effect.
 
 <!-- readme-package-icons end -->
 
-TODO
-
-- Bump version
-- Build with sourcemaps
-- Upload src + build
-- Trigger vercel build (without sourcemaps)
-- 
-
 ## ⚡ So how does that work?
 
 We basically need two things on remix to achieve our goal:
@@ -26,11 +18,10 @@ We basically need two things on remix to achieve our goal:
 ### 🔶 Creating a custom loader
 
 ```typescript
-import { type LoaderFunctionArgs } from '@remix-run/server-runtime';
+import type { LoaderFunctionArgs } from '@remix-run/server-runtime';
 import { Effect, pipe } from 'effect';
-import { captureErrors, prettyPrint } from 'effect-errors';
 
-import { getSpansDuration } from './logic/get-spans-duration';
+import { collectErrorDetails } from './logic/collect-error-details';
 import { remixThrow } from './logic/remix-throw';
 
 export const effectLoader =
@@ -41,48 +32,59 @@ export const effectLoader =
         effect(args),
         Effect.map((data) => ({ _tag: 'success' as const, data })),
         Effect.sandbox,
-        Effect.catchAll((cause) => {
-          // Serverside logging
-          const errorsText = prettyPrint(cause, { stripCwd: true });
-          console.error(errorsText);
-
-          // Getting errors data to display it client side
-          const { errors } = captureErrors(cause, {
-            reverseSpans: true,
-            stripCwd: true,
-          });
-
-          // Computing spans duration ...
-          const errorsWithSpanDuration = errors.map(
-            ({ errorType, message, stack, spans }) => ({
-              type: errorType,
-              message,
-              stack,
-              spans: getSpansDuration(spans),
-            }),
-          );
-
-          return Effect.succeed({
-            _tag: 'error' as const,
-            data: errorsWithSpanDuration,
-          });
-        }),
+        Effect.catchAll(collectErrorDetails),
       ),
     ).then(remixThrow);
+```
+
+If the effect fails, we retrieve errors data and related code: 
+
+- In dev mode, effect-errors will use sourcemaps to extract code excerpts related to the error.
+- In production however, we must fetch the map file (uploaded in our example on cloudflare R2), and read it to extract sources.
+
+```typescript
+export const collectErrorDetails = <E>(cause: Cause<E>) =>
+  pipe(
+    Effect.gen(function* () {
+      // Serverside logging
+      const errorsText = prettyPrint(cause, { stripCwd: false });
+      console.error(errorsText);
+
+      const { errors } = yield* captureErrors(cause, {});
+
+      if (errors.every((e) => e.location !== undefined)) {
+        // Fetch map file and resolve sourcemaps ...
+        const errorsWithSources = yield* getErrorSourcesFromMapFile(errors);
+
+        return yield* Effect.succeed({
+          _tag: 'effect-post-mapped-errors' as const,
+          errors: errorsWithSources,
+        });
+      }
+
+      // in Dev mode, sources are resolved by effect-errors
+      return yield* Effect.succeed({
+        _tag: 'effect-natively-mapped-errors' as const,
+        errors,
+      });
+    }),
+    Effect.scoped,
+    Effect.provide(FetchHttpClient.layer),
+    Effect.withSpan('collect-error-details'),
+  );
+
 ```
 
 We need to pipe on the promise because remix expects us to throw a `json` function result from the loader for errors:
 
 ```typescript
 import { json } from '@remix-run/server-runtime';
-import { match } from 'ts-pattern';
 
-import {
+import { Match } from 'effect';
+import type {
   EffectLoaderError,
   EffectLoaderSuccess,
 } from '../types/effect-loader.types';
-
-import { stringifyErrorsMessage } from './stringify-errors-message';
 
 type RemixThrowInput<A> = EffectLoaderSuccess<A> | EffectLoaderError;
 
@@ -91,17 +93,12 @@ const effectHasSucceeded = <A>(
 ): p is EffectLoaderSuccess<A> => p._tag === 'success';
 
 export const remixThrow = <A>(input: RemixThrowInput<A>) =>
-  match(input)
-    .when(
-      (p) => effectHasSucceeded(p),
-      ({ data }) => data,
-    )
-    .otherwise(({ data }) => {
-      throw json(
-        { type: 'effect', errors: stringifyErrorsMessage(data as never) },
-        { status: 500 },
-      );
-    });
+  Match.value(input).pipe(
+    Match.when(effectHasSucceeded, ({ data }) => data),
+    Match.orElse((data) => {
+      throw json(data, { status: 500 });
+    }),
+  );
 ```
 
 ### 🔶 Creating an error boundary to display effect errors details
@@ -115,36 +112,38 @@ import {
   useRouteError,
 } from '@remix-run/react';
 
-export interface EffectError {
-  type?: string;
-  message: string;
-  stack?: string;
-  spans?: {
-    name: string;
-    attributes: Record<string, unknown>;
-    duration: bigint | undefined;
-  }[];
-}
+import type {
+  EffectNativelyMappedErrors,
+  EffectPostMappedErrors,
+} from '@server/loader/types/effect-loader.types';
 
-const isEffectError = (
-  error: unknown,
-): error is {
-  data: {
-    type: 'effect';
-    errors: EffectError[];
-  };
-} => (error as { data?: { type?: 'effect' } })?.data?.type === 'effect';
+import { isUnknownAnEffectError } from './logic/is-uknown-an-effect-error.logic';
+import { mapEffectErrorTypes } from './logic/map-effect-error-types';
 
-export const useErrorDetails = () => {
+export type EffectPostMappedErrorsWithPath = EffectPostMappedErrors & {
+  path: string;
+};
+export type EffectNativelyMappedErrorsWithPath = EffectNativelyMappedErrors & {
+  path: string;
+};
+
+export type ErrorsDetails =
+  | {
+      _tag: 'route' | 'error' | 'unknown';
+      path: string;
+      errors: {
+        message: string;
+      }[];
+    }
+  | EffectPostMappedErrorsWithPath
+  | EffectNativelyMappedErrorsWithPath;
+
+export const useErrorDetails = (): ErrorsDetails => {
   const { pathname } = useLocation();
   const error = useRouteError();
 
-  if (isEffectError(error)) {
-    return {
-      _tag: 'effect' as const,
-      path: pathname,
-      errors: error.data.errors,
-    };
+  if (isUnknownAnEffectError(error)) {
+    return mapEffectErrorTypes(error, pathname);
   }
 
   const isRoute = isRouteErrorResponse(error);
@@ -176,63 +175,24 @@ export const useErrorDetails = () => {
 };
 ```
 
-We can then focus on data display...
+We can then focus on displaying our errors data...
 
 ```typescript
-import { match } from 'ts-pattern';
-
-import type { EffectError } from './useErrorDetails.code-sample';
-import { useErrorDetails } from './useErrorDetails.code-sample';
-
-type EffectErrorDetailsProps = Pick<EffectError, 'type' | 'message' | 'spans'>;
-
-const EffectErrorDetails = ({
-  type,
-  message,
-  spans,
-}: EffectErrorDetailsProps) => (
-  <li>
-    {type} {message}{' '}
-    {spans?.map(({ name, duration, attributes }, spanIndex) => (
-      <div key={spanIndex}>
-        <div>{name}</div>
-        <div>{duration !== undefined ? `~ ${duration} ms` : ''}</div>
-        <div>
-          {Object.entries(attributes)
-            .filter(([, value]) => value !== null)
-            .map(([key, value], attributeNumber) => (
-              <div key={attributeNumber}>
-                <span>{key}</span>: {JSON.stringify(value)}
-              </div>
-            ))}
-        </div>
-      </div>
-    ))}
-  </li>
-);
-
-const isEffectErrors = (
-  p: ReturnType<typeof useErrorDetails>,
-): p is { _tag: 'effect'; path: string; errors: EffectError[] } =>
-  p._tag === 'effect';
+import { AppErrors } from './children/app-errors';
+import { Summary } from './children/summary';
+import { errorBoundaryStyles } from './error-boundary.styles';
+import { useErrorDetails } from './hooks/use-error-details';
 
 export const ErrorBoundary = () => {
-  const errors = useErrorDetails();
+  const css = errorBoundaryStyles();
 
-  return match(errors)
-    .when(isEffectErrors, ({ errors }) => (
-      <ul>
-        {errors.map((e, errorIndex) => (
-          <EffectErrorDetails key={errorIndex} {...e} />
-        ))}
-      </ul>
-    ))
-    .otherwise(({ errors }) => (
-      <ul>
-        {errors.map(({ message }, errorIndex) => (
-          <li key={errorIndex}>{message}</li>
-        ))}
-      </ul>
-    ));
+  const data = useErrorDetails();
+
+  return (
+    <div className={css.root}>
+      <Summary {...data} />
+      <AppErrors {...data} />
+    </div>
+  );
 };
 ```

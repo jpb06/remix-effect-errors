@@ -1,8 +1,13 @@
-import type { EffectErrorWithSources } from '@types';
+import type {
+  EffectNativelyMappedErrorsWithPath,
+  EffectPostMappedErrorsWithPath,
+  ErrorsDetails,
+} from '../../../hooks/use-error-details';
 
-import type { ErrorsDetails } from '../../../hooks/use-error-details';
-
-export const isEffectErrors = (
-  arg: Pick<ErrorsDetails, '_tag' | 'path' | 'errors'>,
-): arg is { _tag: 'effect'; path: string; errors: EffectErrorWithSources[] } =>
-  arg._tag === 'effect';
+export const isEffectError = (
+  errorsDetails: ErrorsDetails,
+): errorsDetails is
+  | EffectPostMappedErrorsWithPath
+  | EffectNativelyMappedErrorsWithPath =>
+  errorsDetails._tag === 'effect-natively-mapped-errors' ||
+  errorsDetails._tag === 'effect-post-mapped-errors';

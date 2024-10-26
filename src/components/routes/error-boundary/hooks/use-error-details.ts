@@ -4,9 +4,20 @@ import {
   useRouteError,
 } from '@remix-run/react';
 
-import type { EffectErrorWithSources } from '@types';
+import type {
+  EffectNativelyMappedErrors,
+  EffectPostMappedErrors,
+} from '@server/loader/types/effect-loader.types';
 
-import { isEffectError } from './logic/is-effect-error.logic';
+import { isUnknownAnEffectError } from './logic/is-uknown-an-effect-error.logic';
+import { mapEffectErrorTypes } from './logic/map-effect-error-types';
+
+export type EffectPostMappedErrorsWithPath = EffectPostMappedErrors & {
+  path: string;
+};
+export type EffectNativelyMappedErrorsWithPath = EffectNativelyMappedErrors & {
+  path: string;
+};
 
 export type ErrorsDetails =
   | {
@@ -16,22 +27,15 @@ export type ErrorsDetails =
         message: string;
       }[];
     }
-  | {
-      _tag: 'effect';
-      path: string;
-      errors: EffectErrorWithSources[];
-    };
+  | EffectPostMappedErrorsWithPath
+  | EffectNativelyMappedErrorsWithPath;
 
 export const useErrorDetails = (): ErrorsDetails => {
   const { pathname } = useLocation();
   const error = useRouteError();
 
-  if (isEffectError(error)) {
-    return {
-      _tag: 'effect' as const,
-      path: pathname,
-      errors: error.data.errors,
-    };
+  if (isUnknownAnEffectError(error)) {
+    return mapEffectErrorTypes(error, pathname);
   }
 
   const isRoute = isRouteErrorResponse(error);

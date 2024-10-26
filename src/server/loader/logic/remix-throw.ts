@@ -1,6 +1,6 @@
 import { json } from '@remix-run/server-runtime';
-import { match } from 'ts-pattern';
 
+import { Match } from 'effect';
 import type {
   EffectLoaderError,
   EffectLoaderSuccess,
@@ -13,19 +13,9 @@ const effectHasSucceeded = <A>(
 ): p is EffectLoaderSuccess<A> => p._tag === 'success';
 
 export const remixThrow = <A>(input: RemixThrowInput<A>) =>
-  match(input)
-    .when(
-      (p) => effectHasSucceeded(p),
-      ({ data }) => data,
-    )
-    .otherwise(({ errors }) => {
-      throw json(
-        {
-          type: 'effect',
-          errors,
-        },
-        {
-          status: 500,
-        },
-      );
-    });
+  Match.value(input).pipe(
+    Match.when(effectHasSucceeded, ({ data }) => data),
+    Match.orElse((data) => {
+      throw json(data, { status: 500 });
+    }),
+  );

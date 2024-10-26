@@ -1,9 +1,9 @@
 import { cx } from '@panda/css';
 import { Box } from '@panda/jsx';
 import { Link } from '@remix-run/react';
+import { Match } from 'effect';
 import { AnimatePresence } from 'framer-motion';
 import type { FunctionComponent } from 'react';
-import { match } from 'ts-pattern';
 
 import JamGithub from '~icons/jam/github';
 import MiMenu from '~icons/mi/menu';
@@ -42,17 +42,18 @@ export const AppBar: FunctionComponent = () => {
           ref={mobileMenuButtonRef}
         >
           <AnimatePresence mode="wait" initial={false}>
-            {match(mobileIconMenuState)
-              .with('open', () => (
+            {Match.value(mobileIconMenuState).pipe(
+              Match.when('open', () => (
                 <MobileMenuIcon rotate={180}>
                   <SystemUiconsMidpoint className={css.icon} />
                 </MobileMenuIcon>
-              ))
-              .otherwise(() => (
+              )),
+              Match.orElse(() => (
                 <MobileMenuIcon rotate={-180}>
                   <MiMenu className={css.icon} />
                 </MobileMenuIcon>
-              ))}
+              )),
+            )}
           </AnimatePresence>
         </label>
         <Box className={css.mobileMenuItems} ref={mobileMenuRef}>
@@ -73,24 +74,14 @@ export const AppBar: FunctionComponent = () => {
       <div className={css.desktopMenuItems}>
         <div>
           {errorTypesMenuItems.map(({ href, label }) => (
-            <AppBarLink
-              key={href}
-              to={href}
-              size="narrow"
-              // onClick={() => setMobileMenuState('closed')}
-            >
+            <AppBarLink key={href} to={href} size="narrow">
               {label}
             </AppBarLink>
           ))}
         </div>
         <div>
           {useCasesMenuItems.map(({ href, label }) => (
-            <AppBarLink
-              key={href}
-              to={href}
-              size="narrow"
-              // onClick={() => setMobileMenuState('closed')}
-            >
+            <AppBarLink key={href} to={href} size="narrow">
               {label}
             </AppBarLink>
           ))}
