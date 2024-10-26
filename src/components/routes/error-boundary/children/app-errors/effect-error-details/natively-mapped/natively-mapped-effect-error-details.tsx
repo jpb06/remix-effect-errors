@@ -1,25 +1,25 @@
 import { Box } from '@panda/jsx';
+import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
-import { CodeFromEffectError } from '@components/design-system/code';
+import { CodeFromNativelyMappedEffectError } from '@components/design-system/code';
 import { MotionContainer } from '@components/design-system/motion-container';
-import type { EffectErrorWithSources } from '@types';
 
-import { effectErrorDetailsStyles } from './effect-error-details.styles';
-import { ErrorMessage } from './error-message';
-import { ErrorSpansTree } from './error-spans-tree';
+import {
+  ErrorMessage,
+  ErrorSpansTree,
+  effectErrorDetailsStyles,
+} from '../common-children';
 
-type EffectErrorDetailsProps = {
+type NativelyMappedEffectErrorDetailsProps = {
   number: number;
-  error: EffectErrorWithSources;
+  error: ErrorData;
   hasSeveralErrors: boolean;
 };
 
-export const EffectErrorDetails: FunctionComponent<EffectErrorDetailsProps> = ({
-  number,
-  error,
-  hasSeveralErrors,
-}) => {
+export const NativelyMappedEffectErrorDetails: FunctionComponent<
+  NativelyMappedEffectErrorDetailsProps
+> = ({ number, error, hasSeveralErrors }) => {
   const css = effectErrorDetailsStyles();
 
   return (
@@ -35,8 +35,8 @@ export const EffectErrorDetails: FunctionComponent<EffectErrorDetailsProps> = ({
       <Box className={css.sourcesBorder}>
         <Box className={css.sources}>
           <span className={css.sourcesTitle}>Error related code</span>
-          {error.sources.map((source, index) => (
-            <CodeFromEffectError
+          {error.sources?.map((source, index) => (
+            <CodeFromNativelyMappedEffectError
               // biome-ignore lint/suspicious/noArrayIndexKey: no id
               key={index}
               {...source}

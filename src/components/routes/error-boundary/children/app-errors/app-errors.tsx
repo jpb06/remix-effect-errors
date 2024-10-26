@@ -1,34 +1,50 @@
 import { Box } from '@panda/jsx';
-import { match } from 'ts-pattern';
-
+import type { EffectErrorWithSources } from '@types';
+import { Match } from 'effect';
+import type { ErrorData } from 'effect-errors';
 import type { ErrorsDetails } from '../../hooks/use-error-details';
 import { appErrorStyles } from './app-error.styles';
-import { EffectErrorDetails } from './effect-error-details/effect-error-details';
-import { isEffectErrors } from './logic/is-effect-error.logic';
+import {
+  NativelyMappedEffectErrorDetails,
+  PostMappedEffectErrorDetails,
+} from './effect-error-details';
+import { isEffectError } from './logic/is-effect-error.logic';
 import { NodeErrorDetails } from './node-error-details';
 
-type AppErrorsProps = Pick<ErrorsDetails, '_tag' | 'path' | 'errors'>;
-
-export const AppErrors = (props: AppErrorsProps) => {
+export const AppErrors = (props: ErrorsDetails) => {
   const css = appErrorStyles();
 
   const hasSeveralErrors = props.errors.length > 1;
 
   return (
     <Box className={css.root}>
-      {match(props)
-        .when(isEffectErrors, ({ errors }) =>
-          errors.map((error, index) => (
-            <EffectErrorDetails
-              // biome-ignore lint/suspicious/noArrayIndexKey: no id
-              key={index}
-              number={index + 1}
-              error={error}
-              hasSeveralErrors={hasSeveralErrors}
-            />
-          )),
-        )
-        .otherwise(({ errors }) =>
+      {Match.value(props).pipe(
+        Match.when(isEffectError, ({ _tag, errors }) =>
+          errors.map((error, index) =>
+            Match.value(_tag).pipe(
+              Match.when('effect-natively-mapped-errors', () => (
+                <NativelyMappedEffectErrorDetails
+                  // biome-ignore lint/suspicious/noArrayIndexKey: no id
+                  key={index}
+                  number={index + 1}
+                  error={error as ErrorData}
+                  hasSeveralErrors={hasSeveralErrors}
+                />
+              )),
+              Match.when('effect-post-mapped-errors', () => (
+                <PostMappedEffectErrorDetails
+                  // biome-ignore lint/suspicious/noArrayIndexKey: no id
+                  key={index}
+                  number={index + 1}
+                  error={error as EffectErrorWithSources}
+                  hasSeveralErrors={hasSeveralErrors}
+                />
+              )),
+              Match.orElseAbsurd,
+            ),
+          ),
+        ),
+        Match.orElse(({ errors }) =>
           errors.map((error, index) => (
             <NodeErrorDetails
               // biome-ignore lint/suspicious/noArrayIndexKey: no id
@@ -38,7 +54,8 @@ export const AppErrors = (props: AppErrorsProps) => {
               error={error as Error}
             />
           )),
-        )}
+        ),
+      )}
     </Box>
   );
 };

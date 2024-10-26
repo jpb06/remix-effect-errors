@@ -18,5 +18,5 @@ export const uploadServerIndex = (version: string) =>
         contentType: 'application/json',
       });
     }),
-    Effect.withSpan('upload-server-index'),
+    Effect.withSpan('upload-server-index', { attributes: { version } }),
   );

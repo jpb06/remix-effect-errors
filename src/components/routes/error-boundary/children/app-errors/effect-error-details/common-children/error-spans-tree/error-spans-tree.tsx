@@ -1,3 +1,4 @@
+import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
 import type { EffectErrorWithSources } from '@types';
@@ -6,7 +7,7 @@ import { errorSpansStyles } from './error-spans.styles';
 import { SpanDetails } from './span-details';
 
 type ErrorSpansTreeProps = {
-  error: EffectErrorWithSources;
+  error: EffectErrorWithSources | ErrorData;
 };
 
 export const ErrorSpansTree: FunctionComponent<ErrorSpansTreeProps> = ({
