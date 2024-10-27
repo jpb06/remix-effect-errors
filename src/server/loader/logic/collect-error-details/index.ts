@@ -12,7 +12,6 @@ const getErrorSourcesFromMapFile = (errors: ErrorData[]) =>
   pipe(
     Effect.gen(function* () {
       const branch = process.env.VERCEL_GIT_COMMIT_REF ?? 'main';
-      console.info('VERCEL_GIT_COMMIT_REF', process.env.VERCEL_GIT_COMMIT_REF);
 
       const mapFile = yield* getMapFile(branch);
       const consumer = new SourceMapConsumer(mapFile);
