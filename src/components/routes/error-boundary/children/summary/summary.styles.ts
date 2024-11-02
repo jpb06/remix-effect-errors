@@ -9,13 +9,13 @@ export const errorBoundarySummaryStyles = sva({
     },
     errors: {
       alignContent: 'center',
-      fontSize: '1.25rem',
+      fontSize: '1.55rem',
       lineHeight: '1.75rem',
       justifyContent: 'space-between',
     },
     icon: {
-      width: '2.5rem',
-      height: '2.5rem',
+      width: '3.5rem',
+      height: '3.5rem',
     },
   },
 });

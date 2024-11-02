@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    taggedErrorTask,
+    Effect.all([Effect.sleep('18 millis'), taggedErrorTask]),
     Effect.withSpan('tagged-error-example-loader', {
       attributes: {
         url: request.url,

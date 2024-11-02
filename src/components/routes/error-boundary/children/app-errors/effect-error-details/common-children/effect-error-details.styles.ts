@@ -1,14 +1,14 @@
 import { sva } from '@panda/css';
 
 export const effectErrorDetailsStyles = sva({
-  slots: ['root', 'errorHeader', 'sourcesBorder', 'sources', 'sourcesTitle'],
+  slots: ['root', 'summary', 'sourcesBorder', 'sources', 'sourcesTitle'],
   base: {
     root: {
       display: 'flex',
       flexDirection: 'column',
       gap: 2,
     },
-    errorHeader: {
+    summary: {
       fontSize: 'larger',
       fontWeight: 800,
       maxWidth: '52rem',

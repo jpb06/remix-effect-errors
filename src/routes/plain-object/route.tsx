@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    plainObjectErrorTask,
+    Effect.all([Effect.sleep('14 millis'), plainObjectErrorTask]),
     Effect.withSpan('plain-object-example-loader', {
       attributes: {
         url: request.url,

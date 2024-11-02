@@ -25,6 +25,6 @@ const readUser = pipe(
 );
 
 export const taggedErrorWithCtorTask = pipe(
-  readUser,
+  Effect.all([Effect.sleep('37 millis'), readUser]),
   Effect.withSpan('tagged-error-task'),
 );

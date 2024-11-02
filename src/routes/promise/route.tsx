@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    fromPromiseTask,
+    Effect.all([Effect.sleep('120 millis'), fromPromiseTask]),
     Effect.withSpan('promise-example-loader', {
       attributes: {
         url: request.url,

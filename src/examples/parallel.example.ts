@@ -8,22 +8,29 @@ class UserNotFoundError extends TaggedError('UserNotFound')<{
 
 const readUser = (name: string) =>
   pipe(
-    Effect.tryPromise({
-      try: async () => await Promise.reject('Oh no, this user does not exist!'),
-      catch: (e) => new UserNotFoundError({ cause: e }),
-    }),
+    Effect.all([
+      Effect.sleep('32 millis'),
+      Effect.tryPromise({
+        try: async () =>
+          await Promise.reject('Oh no, this user does not exist!'),
+        catch: (e) => new UserNotFoundError({ cause: e }),
+      }),
+    ]),
     Effect.withSpan('read-user', { attributes: { name } }),
   );
 
 const parallelGet = (names: string[]) =>
   pipe(
-    Effect.all(names.map(readUser), {
-      concurrency: 'unbounded',
-    }),
+    Effect.sleep('14 millis'),
+    Effect.flatMap(() =>
+      Effect.all(names.map(readUser), {
+        concurrency: 'unbounded',
+      }),
+    ),
     Effect.withSpan('parallel-get', { attributes: { names } }),
   );
 
 export const parallelTask = pipe(
-  parallelGet(['yolo', 'bro', 'cool']),
+  Effect.all([Effect.sleep('12 millis'), parallelGet(['yolo', 'bro', 'cool'])]),
   Effect.withSpan('parallel-errors-task'),
 );

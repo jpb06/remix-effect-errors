@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    taggedErrorWithCtorTask,
+    Effect.all([Effect.sleep('32 millis'), taggedErrorWithCtorTask]),
     Effect.withSpan('tagged-error-with-ctor-loader', {
       attributes: {
         url: request.url,
