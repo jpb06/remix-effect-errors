@@ -1,6 +1,5 @@
-import { json } from '@remix-run/server-runtime';
-
 import { Match } from 'effect';
+import { typedjson } from 'remix-typedjson';
 import type {
   EffectLoaderError,
   EffectLoaderSuccess,
@@ -16,6 +15,6 @@ export const remixThrow = <A>(input: RemixThrowInput<A>) =>
   Match.value(input).pipe(
     Match.when(effectHasSucceeded, ({ data }) => data),
     Match.orElse((data) => {
-      throw json(data, { status: 500 });
+      throw typedjson(data, { status: 500 });
     }),
   );

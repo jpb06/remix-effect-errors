@@ -7,7 +7,7 @@ import {
 
 type Buckets = 'remix-effect-errors';
 
-type MapFile = {
+export type MapFile = {
   version: string;
   file: string;
   sources: string[];
@@ -16,7 +16,7 @@ type MapFile = {
   mappings: string;
 };
 
-export const getMapFile = (branchName: string) =>
+export const getMapFileFromR2 = (branchName: string) =>
   pipe(
     FileStorageLayer.readAsJson<Buckets, MapFile>(
       'remix-effect-errors',
@@ -26,5 +26,5 @@ export const getMapFile = (branchName: string) =>
     Effect.provide(
       Layer.mergeAll(CloudflareR2StorageLayerLive, FetchHttpClient.layer),
     ),
-    Effect.withSpan('get-map-file'),
+    Effect.withSpan('get-map-file-from-r2', { attributes: { branchName } }),
   );
