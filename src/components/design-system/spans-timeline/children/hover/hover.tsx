@@ -19,14 +19,7 @@ export const SpanTimelineHover: FunctionComponent<SpansTimelineHoverProps> = ({
         <Box
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           key={index}
-          css={{
-            display: 'flex',
-            color: 'amber.100',
-            justifyContent: 'space-between',
-            height: '1rem',
-            lineHeight: '1.5rem',
-            fontWeight: 'bold',
-          }}
+          className={css.span}
         >
           <span>{name}</span>
           <span>{durationInMilliseconds} ms</span>

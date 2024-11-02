@@ -1,7 +1,7 @@
 import { sva } from '@panda/css';
 
 export const spansTimelineHoverStyles = sva({
-  slots: ['root'],
+  slots: ['root', 'span'],
   base: {
     root: {
       display: 'none',
@@ -19,6 +19,14 @@ export const spansTimelineHoverStyles = sva({
         left: 0,
         width: '100%',
       },
+    },
+    span: {
+      display: 'flex',
+      color: 'amber.100',
+      justifyContent: 'space-between',
+      height: '1rem',
+      lineHeight: '1.5rem',
+      fontWeight: 'bold',
     },
   },
 });
