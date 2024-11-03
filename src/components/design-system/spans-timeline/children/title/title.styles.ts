@@ -7,7 +7,8 @@ export const spansTimelineTitleStyles = sva({
       fontSize: 'xl',
       color: 'amber.400',
       fontWeight: 'bold',
-      textAlign: 'center',
+      textAlign: 'left',
+      paddingLeft: '1rem',
     },
   },
 });
