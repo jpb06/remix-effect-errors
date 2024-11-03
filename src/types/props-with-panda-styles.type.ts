@@ -1,5 +1,5 @@
 import type { Styles } from '@panda/css';
 
-export type PropsWithStyles<P = unknown> = P & {
+export type PropsWithPandaStyles<P = unknown> = P & {
   styles?: Styles;
 };

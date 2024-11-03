@@ -2,6 +2,7 @@ import { Box } from '@panda/jsx';
 import type { EffectErrorWithSources } from '@types';
 import { Match } from 'effect';
 import type { ErrorData } from 'effect-errors';
+
 import type { ErrorsDetails } from '../../hooks/use-error-details';
 import { appErrorStyles } from './app-error.styles';
 import {

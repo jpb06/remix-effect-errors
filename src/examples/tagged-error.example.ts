@@ -17,7 +17,7 @@ const subTask = pipe(
 );
 
 export const taggedErrorTask = pipe(
-  subTask,
+  Effect.all([Effect.sleep('21 millis'), subTask]),
   Effect.withSpan('tagged-error-task', {
     attributes: {
       struff: 'struff',

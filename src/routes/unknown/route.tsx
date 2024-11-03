@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    unknownErrorTask,
+    Effect.all([Effect.sleep('21 millis'), unknownErrorTask]),
     Effect.withSpan('unknown-error-example-loader', {
       attributes: {
         url: request.url,

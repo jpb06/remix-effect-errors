@@ -7,6 +7,6 @@ const readUser = pipe(
 );
 
 export const unknownErrorTask = pipe(
-  readUser,
+  Effect.all([Effect.sleep('55 millis'), readUser]),
   Effect.withSpan('unknown-error-task'),
 );

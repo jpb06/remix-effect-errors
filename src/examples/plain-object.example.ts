@@ -6,6 +6,6 @@ const readUser = pipe(
 );
 
 export const plainObjectErrorTask = pipe(
-  readUser,
+  Effect.all([Effect.sleep('33 millis'), readUser]),
   Effect.withSpan('plain-object-error-task'),
 );

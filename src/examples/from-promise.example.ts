@@ -26,14 +26,18 @@ const readUser = pipe(
 
 const fetchTask = (userId: number) =>
   pipe(
-    Effect.tryPromise({
-      try: async () =>
-        await fetch(`https://yolo-bro-oh-no.org/users/${userId}`),
-      catch: (e) =>
-        new FetchError({
-          cause: (e as Error).message,
-        }),
-    }),
+    Effect.all([
+      Effect.sleep('45 millis'),
+      Effect.tryPromise({
+        try: async () =>
+          await fetch(`https://yolo-bro-oh-no.org/users/${userId}`),
+        catch: (e) =>
+          new FetchError({
+            cause: (e as Error).message,
+          }),
+      }),
+    ]),
+    Effect.map(([, data]) => data),
     Effect.withSpan('fetch-user', { attributes: { userId } }),
   );
 
@@ -48,6 +52,7 @@ const unwrapResponseTask = (response: Response) =>
 
 export const fromPromiseTask = pipe(
   Effect.gen(function* () {
+    yield* Effect.sleep('200 millis');
     const { id } = yield* readUser;
     const response = yield* fetchTask(id);
 

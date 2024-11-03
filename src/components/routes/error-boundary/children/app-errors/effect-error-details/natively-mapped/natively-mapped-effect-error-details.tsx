@@ -4,6 +4,7 @@ import type { FunctionComponent } from 'react';
 
 import { CodeFromNativelyMappedEffectError } from '@components/design-system/code';
 import { MotionContainer } from '@components/design-system/motion-container';
+import { SpansTimeline } from '@components/design-system/spans-timeline';
 
 import {
   ErrorMessage,
@@ -24,7 +25,7 @@ export const NativelyMappedEffectErrorDetails: FunctionComponent<
 
   return (
     <Box className={css.root}>
-      <MotionContainer className={css.errorHeader}>
+      <MotionContainer className={css.summary}>
         <ErrorMessage
           number={number}
           error={error}
@@ -32,6 +33,7 @@ export const NativelyMappedEffectErrorDetails: FunctionComponent<
         />
         <ErrorSpansTree error={error} />
       </MotionContainer>
+      <SpansTimeline spans={error.spans} />
       <Box className={css.sourcesBorder}>
         <Box className={css.sources}>
           <span className={css.sourcesTitle}>Error related code</span>

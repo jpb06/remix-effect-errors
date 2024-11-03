@@ -37,7 +37,7 @@ export const createStyles = sva({
       display: 'flex',
       flex: '1 1 auto',
       flexDirection: 'column',
-      padding: 8,
+      padding: 4,
       gap: 2,
     },
   },

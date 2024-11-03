@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    parallelTask,
+    Effect.all([Effect.sleep('23 millis'), parallelTask]),
     Effect.withSpan('parallel-example-loader', {
       attributes: {
         url: request.url,
