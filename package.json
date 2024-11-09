@@ -19,18 +19,18 @@
     "sync-icons": "bun generateReadmeIcons -h 50"
   },
   "dependencies": {
-    "@effect/platform": "^0.69.13",
-    "@remix-run/css-bundle": "^2.13.1",
-    "@remix-run/node": "^2.13.1",
-    "@remix-run/react": "^2.13.1",
-    "@remix-run/serve": "^2.13.1",
-    "@remix-run/server-runtime": "^2.13.1",
+    "@effect/platform": "^0.69.20",
+    "@remix-run/css-bundle": "^2.14.0",
+    "@remix-run/node": "^2.14.0",
+    "@remix-run/react": "^2.14.0",
+    "@remix-run/serve": "^2.14.0",
+    "@remix-run/server-runtime": "^2.14.0",
     "cacheable": "^1.8.3",
     "comment-json": "^4.2.5",
     "date-fns": "^4.1.0",
-    "effect": "^3.10.8",
-    "effect-cloudflare-r2-layer": "^1.0.28",
-    "effect-errors": "^1.7.26",
+    "effect": "^3.10.13",
+    "effect-cloudflare-r2-layer": "^1.0.29",
+    "effect-errors": "^1.7.29",
     "framer-motion": "^11.11.11",
     "fs-extra": "^11.2.0",
     "highlight.js": "^11.10.0",
@@ -43,9 +43,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@iconify/json": "^2.2.267",
-    "@pandacss/dev": "^0.47.0",
-    "@remix-run/dev": "^2.13.1",
+    "@iconify/json": "^2.2.270",
+    "@pandacss/dev": "^0.47.1",
+    "@remix-run/dev": "^2.14.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@types/fs-extra": "^11.0.4",
@@ -56,9 +56,9 @@
     "postcss": "^8.4.47",
     "readme-package-icons": "^1.1.16",
     "typescript": "^5.6.3",
-    "unplugin-icons": "^0.20.0",
+    "unplugin-icons": "^0.20.1",
     "vite": "^5.4.10",
-    "vite-tsconfig-paths": "^5.0.1"
+    "vite-tsconfig-paths": "^5.1.1"
   },
   "engines": {
     "node": ">=20.0.0"
