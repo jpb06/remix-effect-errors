@@ -1,5 +1,6 @@
 import { FetchHttpClient } from '@effect/platform';
-import { Effect, pipe } from 'effect';
+import { NodeFileSystem } from '@effect/platform-node';
+import { Effect, Layer, pipe } from 'effect';
 import { captureErrors, prettyPrint } from 'effect-errors';
 import type { Cause } from 'effect/Cause';
 
@@ -29,6 +30,6 @@ export const collectErrorDetails = <E>(cause: Cause<E>) =>
       });
     }),
     Effect.scoped,
-    Effect.provide(FetchHttpClient.layer),
+    Effect.provide(Layer.mergeAll(FetchHttpClient.layer, NodeFileSystem.layer)),
     Effect.withSpan('collect-error-details'),
   );
