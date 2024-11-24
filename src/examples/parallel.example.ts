@@ -8,14 +8,10 @@ class UserNotFoundError extends TaggedError('UserNotFound')<{
 
 const readUser = (name: string) =>
   pipe(
-    Effect.all([
-      Effect.sleep('32 millis'),
-      Effect.tryPromise({
-        try: async () =>
-          await Promise.reject('Oh no, this user does not exist!'),
-        catch: (e) => new UserNotFoundError({ cause: e }),
-      }),
-    ]),
+    Effect.tryPromise({
+      try: async () => await Promise.reject('Oh no, this user does not exist!'),
+      catch: (e) => new UserNotFoundError({ cause: e }),
+    }),
     Effect.withSpan('read-user', { attributes: { name } }),
   );
 
