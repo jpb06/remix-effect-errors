@@ -29,7 +29,7 @@
     "comment-json": "^4.2.5",
     "date-fns": "^4.1.0",
     "effect": "^3.10.16",
-    "effect-cloudflare-r2-layer": "^1.0.31",
+    "effect-cloudflare-r2-layer": "^1.0.32",
     "effect-errors": "^1.7.33",
     "framer-motion": "^11.11.17",
     "highlight.js": "^11.10.0",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@iconify/json": "^2.2.275",
+    "@iconify/json": "^2.2.276",
     "@pandacss/dev": "^0.48.0",
     "@remix-run/dev": "^2.15.0",
     "@svgr/core": "^8.1.0",
