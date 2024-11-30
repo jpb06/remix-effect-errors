@@ -29,7 +29,7 @@
     "comment-json": "^4.2.5",
     "date-fns": "^4.1.0",
     "effect": "^3.10.19",
-    "effect-cloudflare-r2-layer": "^1.0.32",
+    "effect-cloudflare-r2-layer": "^1.0.33",
     "effect-errors": "^1.7.34",
     "framer-motion": "^11.12.0",
     "highlight.js": "^11.10.0",
