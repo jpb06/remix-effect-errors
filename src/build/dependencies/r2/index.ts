@@ -1,2 +1,3 @@
 export * from './ensure-bucket';
-export * from './upload-server-index';
+export * from './upload-map-file';
+export * from './delete-map-file';

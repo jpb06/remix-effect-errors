@@ -1,0 +1,54 @@
+name: ⚡ Delete sourcemaps
+
+on:
+  delete:
+    branches:
+      - '**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  sourcemaps-deletion:
+    name: ⚙️ Delete sourcemaps
+    runs-on: ubuntu-latest
+    if: "startsWith(github.event.ref_type, 'branch')"
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - name: 📦 Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          # cache: 'bun'
+          cache-dependency-path: ./package.json
+
+      - name: 📥 Install deps
+        run: bun install --frozen-lockfile
+
+      - name: 📡 delete-sourcemap
+        env:
+          DELETED_BRANCH: ${{ github.event.ref }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_DOCUMENTS_ACCESS_KEY_ID: ${{ secrets.R2_DOCUMENTS_ACCESS_KEY_ID }}
+          R2_DOCUMENTS_SECRET_ACCESS_KEY: ${{ secrets.R2_DOCUMENTS_SECRET_ACCESS_KEY }}
+        run: bun run delete-sourcemaps 

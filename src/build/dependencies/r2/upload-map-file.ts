@@ -4,7 +4,7 @@ import { FileStorageLayer } from 'effect-cloudflare-r2-layer';
 import { readFileEffect } from '../fs';
 import type { Buckets } from './buckets.constant';
 
-export const uploadServerIndex = (version: string) =>
+export const uploadMapFile = (version: string) =>
   pipe(
     Effect.gen(function* () {
       const data = yield* readFileEffect(
@@ -18,5 +18,5 @@ export const uploadServerIndex = (version: string) =>
         contentType: 'application/json',
       });
     }),
-    Effect.withSpan('upload-server-index', { attributes: { version } }),
+    Effect.withSpan('upload-map-file', { attributes: { version } }),
   );
