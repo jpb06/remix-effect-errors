@@ -9,12 +9,12 @@ const task = pipe(
 
     const branch = process.env.DELETED_BRANCH;
     if (branch === undefined) {
-      console.info('DELETED_BRANCH env var is not set');
+      console.info('❌ DELETED_BRANCH env var is not set');
       return;
     }
 
     yield* deleteMapFile(branch);
-    console.info(`✅ mapfile uploaded for branch '${branch}'`);
+    console.info(`✅ mapfile deleted for branch '${branch}'`);
   }),
   Effect.provide(CloudflareR2StorageLayerLive),
   Effect.withSpan('delete-sourcemaps'),
