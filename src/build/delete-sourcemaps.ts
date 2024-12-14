@@ -1,22 +1,23 @@
 import { Effect, pipe } from 'effect';
 import { CloudflareR2StorageLayerLive } from 'effect-cloudflare-r2-layer';
 import { runPromise } from 'effect-errors';
-
-import { getBranch } from './dependencies/github';
-import { ensureBucket, uploadMapFile } from './dependencies/r2';
+import { deleteMapFile } from './dependencies/r2';
 
 const task = pipe(
   Effect.gen(function* () {
-    console.info('Uploading sourcemaps ...');
-    yield* ensureBucket;
+    console.info('Deleting sourcemaps ...');
 
-    const branch = yield* getBranch;
-    yield* uploadMapFile(branch);
+    const branch = process.env.DELETED_BRANCH;
+    if (branch === undefined) {
+      console.info('DELETED_BRANCH env var is not set');
+      return;
+    }
 
+    yield* deleteMapFile(branch);
     console.info(`✅ mapfile uploaded for branch '${branch}'`);
   }),
   Effect.provide(CloudflareR2StorageLayerLive),
-  Effect.withSpan('upload-sourcemaps'),
+  Effect.withSpan('delete-sourcemaps'),
 );
 
 await runPromise(task);
