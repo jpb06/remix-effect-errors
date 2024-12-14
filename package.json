@@ -10,6 +10,7 @@
     "build": "remix vite:build",
     "build-sourcemaps": "remix vite:build --config ./vite-sourcemaps.config.ts",
     "upload-sourcemaps": "bun ./src/build/upload-sourcemaps.ts",
+    "delete-sourcemaps": "bun ./src/build/delete-sourcemaps.ts",
     "dev": "remix vite:dev",
     "type-check": "tsc",
     "format": "biome format --write ./src",
