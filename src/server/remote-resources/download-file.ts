@@ -6,5 +6,5 @@ export const downloadFile = (url: string) =>
     HttpClient.HttpClient,
     Effect.flatMap((client) => client.get(url)),
     Effect.flatMap((response) => response.text),
-    Effect.withSpan('download-file'),
+    Effect.withSpan('download-file', { attributes: { url } }),
   );
