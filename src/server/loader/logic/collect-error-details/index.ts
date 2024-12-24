@@ -1,7 +1,7 @@
 import { FetchHttpClient } from '@effect/platform';
 import { NodeFileSystem } from '@effect/platform-node';
 import { Effect, Layer, pipe } from 'effect';
-import { captureErrors, prettyPrint } from 'effect-errors';
+import { captureErrors, prettyPrintFromCapturedErrors } from 'effect-errors';
 import type { Cause } from 'effect/Cause';
 
 import { getErrorSourcesFromMapFile } from './logic/get-error-sources-from-map-file';
@@ -9,14 +9,20 @@ import { getErrorSourcesFromMapFile } from './logic/get-error-sources-from-map-f
 export const collectErrorDetails = <E>(cause: Cause<E>) =>
   pipe(
     Effect.gen(function* () {
+      const captured = yield* captureErrors(cause, {});
+
       // Serverside logging
-      const errorsText = prettyPrint(cause, { stripCwd: false });
+      const errorsText = prettyPrintFromCapturedErrors(captured, {
+        stripCwd: true,
+        hideStackTrace: true,
+        reverseSpans: true,
+      });
       console.error(errorsText);
 
-      const { errors } = yield* captureErrors(cause, {});
-
-      if (errors.every((e) => e.location !== undefined)) {
-        const errorsWithSources = yield* getErrorSourcesFromMapFile(errors);
+      if (captured.errors.every((e) => e.location !== undefined)) {
+        const errorsWithSources = yield* getErrorSourcesFromMapFile(
+          captured.errors,
+        );
 
         return yield* Effect.succeed({
           _tag: 'effect-post-mapped-errors' as const,
@@ -26,7 +32,7 @@ export const collectErrorDetails = <E>(cause: Cause<E>) =>
 
       return yield* Effect.succeed({
         _tag: 'effect-natively-mapped-errors' as const,
-        errors,
+        errors: captured.errors,
       });
     }),
     Effect.scoped,

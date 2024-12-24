@@ -1,5 +1,4 @@
-import { FetchHttpClient } from '@effect/platform';
-import { Effect, Layer, pipe } from 'effect';
+import { Effect, pipe } from 'effect';
 import {
   CloudflareR2StorageLayerLive,
   FileStorageLayer,
@@ -22,9 +21,6 @@ export const getMapFileFromR2 = (branchName: string) =>
       'remix-effect-errors',
       `build/server/${branchName}/index.js.map`,
     ),
-    Effect.scoped,
-    Effect.provide(
-      Layer.mergeAll(CloudflareR2StorageLayerLive, FetchHttpClient.layer),
-    ),
+    Effect.provide(CloudflareR2StorageLayerLive),
     Effect.withSpan('get-map-file-from-r2', { attributes: { branchName } }),
   );
