@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "prepare": "panda codegen",
-    "update-deps": "taze -I",
+    "update-deps": "taze -f -I",
     "build": "remix vite:build",
     "build-sourcemaps": "remix vite:build --config ./vite-sourcemaps.config.ts",
     "upload-sourcemaps": "bun ./src/build/upload-sourcemaps.ts",
@@ -20,7 +20,7 @@
     "sync-icons": "bun generateReadmeIcons -h 50"
   },
   "dependencies": {
-    "@effect/platform": "^0.71.6",
+    "@effect/platform": "^0.72.0",
     "@remix-run/css-bundle": "^2.15.2",
     "@remix-run/node": "^2.15.2",
     "@remix-run/react": "^2.15.2",
@@ -29,9 +29,9 @@
     "cacheable": "^1.8.6",
     "comment-json": "^4.2.5",
     "date-fns": "^4.1.0",
-    "effect": "^3.11.9",
-    "effect-cloudflare-r2-layer": "^1.0.38",
-    "effect-errors": "^1.8.0",
+    "effect": "^3.12.0",
+    "effect-cloudflare-r2-layer": "^1.0.42",
+    "effect-errors": "^1.8.4",
     "framer-motion": "^11.15.0",
     "highlight.js": "^11.11.0",
     "isbot": "^5.1.18",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@iconify/json": "^2.2.287",
+    "@iconify/json": "^2.2.288",
     "@pandacss/dev": "^0.49.0",
     "@remix-run/dev": "^2.15.2",
     "@svgr/core": "^8.1.0",
