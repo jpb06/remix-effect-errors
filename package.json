@@ -52,7 +52,7 @@
     "@types/react-dom": "19.0.2",
     "@vercel/remix": "2.15.2",
     "esbuild": "0.24.2",
-    "npm-check-updates": "17.1.13",
+    "npm-check-updates": "17.1.14",
     "postcss": "8.4.49",
     "readme-package-icons": "1.1.16",
     "typescript": "5.7.3",
