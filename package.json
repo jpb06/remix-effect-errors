@@ -50,7 +50,7 @@
     "@svgr/plugin-jsx": "8.1.0",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
-    "@vercel/remix": "2.15.2",
+    "@vercel/remix": "2.15.3",
     "esbuild": "0.24.2",
     "npm-check-updates": "17.1.14",
     "postcss": "8.5.1",
