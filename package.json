@@ -55,7 +55,7 @@
     "postcss": "8.5.2",
     "readme-package-icons": "1.2.0",
     "typescript": "5.7.3",
-    "unplugin-icons": "22.0.0",
+    "unplugin-icons": "22.1.0",
     "vite": "6.1.0",
     "vite-tsconfig-paths": "5.1.4"
   },
