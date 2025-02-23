@@ -6,6 +6,7 @@ import {
 
 import type {
   EffectNativelyMappedErrors,
+  EffectNoMapFileError,
   EffectPostMappedErrors,
 } from '@server/loader/types/effect-loader.types';
 
@@ -18,6 +19,9 @@ export type EffectPostMappedErrorsWithPath = EffectPostMappedErrors & {
 export type EffectNativelyMappedErrorsWithPath = EffectNativelyMappedErrors & {
   path: string;
 };
+export type EffectNoMapFileWithPath = EffectNoMapFileError & {
+  path: string;
+};
 
 export type ErrorsDetails =
   | {
@@ -28,7 +32,8 @@ export type ErrorsDetails =
       }[];
     }
   | EffectPostMappedErrorsWithPath
-  | EffectNativelyMappedErrorsWithPath;
+  | EffectNativelyMappedErrorsWithPath
+  | EffectNoMapFileWithPath;
 
 export const useErrorDetails = (): ErrorsDetails => {
   const { pathname } = useLocation();

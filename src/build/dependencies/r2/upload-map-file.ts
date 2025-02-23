@@ -4,7 +4,7 @@ import { FileStorageLayer } from 'effect-cloudflare-r2-layer';
 import { readFileEffect } from '../fs';
 import type { Buckets } from './buckets.constant';
 
-export const uploadMapFile = (version: string) =>
+export const uploadMapFile = (branch: string) =>
   pipe(
     Effect.gen(function* () {
       const data = yield* readFileEffect(
@@ -13,10 +13,10 @@ export const uploadMapFile = (version: string) =>
 
       yield* FileStorageLayer.uploadFile<Buckets>({
         bucketName: 'remix-effect-errors',
-        documentKey: `build/server/${version}/index.js.map`,
+        documentKey: `build/server/${branch}/index.js.map`,
         data,
         contentType: 'application/json',
       });
     }),
-    Effect.withSpan('upload-map-file', { attributes: { version } }),
+    Effect.withSpan('upload-map-file', { attributes: { branch } }),
   );

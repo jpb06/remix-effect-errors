@@ -10,6 +10,9 @@ const isNativelyMapped = ({ _tag }: EffectLoaderError) =>
 const isPostMapped = ({ _tag }: EffectLoaderError) =>
   _tag === 'effect-post-mapped-errors';
 
+const isNoMapFile = ({ _tag }: EffectLoaderError) =>
+  _tag === 'effect-no-map-file';
+
 export const mapEffectErrorTypes = (
   error: RemixCapturedEffectLoaderError,
   path: string,
@@ -20,6 +23,10 @@ export const mapEffectErrorTypes = (
       path,
     })),
     Match.when(isPostMapped, (postMapped) => ({
+      ...postMapped,
+      path,
+    })),
+    Match.when(isNoMapFile, (postMapped) => ({
       ...postMapped,
       path,
     })),
