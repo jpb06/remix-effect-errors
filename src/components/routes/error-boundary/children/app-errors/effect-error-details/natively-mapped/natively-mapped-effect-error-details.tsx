@@ -2,7 +2,6 @@ import { Box } from '@panda/jsx';
 import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
-import { CodeFromNativelyMappedEffectError } from '@components/design-system/code';
 import { MotionContainer } from '@components/design-system/motion-container';
 import { SpansTimeline } from '@components/design-system/spans-timeline';
 
@@ -11,8 +10,11 @@ import {
   ErrorSpansTree,
   effectErrorDetailsStyles,
 } from '../common-children';
+import { NativelyMappedErrorSources } from './children/natively-mapped-error-sources';
+import { UnmappedErrorLocations } from './children/unmapped-error-locations';
 
 type NativelyMappedEffectErrorDetailsProps = {
+  tag: 'effect-natively-mapped-errors' | 'effect-no-map-file';
   number: number;
   error: ErrorData;
   hasSeveralErrors: boolean;
@@ -20,7 +22,7 @@ type NativelyMappedEffectErrorDetailsProps = {
 
 export const NativelyMappedEffectErrorDetails: FunctionComponent<
   NativelyMappedEffectErrorDetailsProps
-> = ({ number, error, hasSeveralErrors }) => {
+> = ({ tag, number, error, hasSeveralErrors }) => {
   const css = effectErrorDetailsStyles();
 
   return (
@@ -34,18 +36,8 @@ export const NativelyMappedEffectErrorDetails: FunctionComponent<
         <ErrorSpansTree error={error} />
       </MotionContainer>
       <SpansTimeline spans={error.spans} />
-      <Box className={css.sourcesBorder}>
-        <Box className={css.sources}>
-          <span className={css.sourcesTitle}>Error related code</span>
-          {error.sources?.map((source, index) => (
-            <CodeFromNativelyMappedEffectError
-              // biome-ignore lint/suspicious/noArrayIndexKey: no id
-              key={index}
-              {...source}
-            />
-          ))}
-        </Box>
-      </Box>
+      <NativelyMappedErrorSources tag={tag} error={error} />
+      <UnmappedErrorLocations tag={tag} error={error} />
     </Box>
   );
 };

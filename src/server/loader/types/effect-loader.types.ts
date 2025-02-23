@@ -16,6 +16,12 @@ export type EffectNativelyMappedErrors = {
   errors: ErrorData[];
 };
 
+export type EffectNoMapFileError = {
+  _tag: 'effect-no-map-file';
+  errors: ErrorData[];
+};
+
 export type EffectLoaderError =
   | EffectPostMappedErrors
-  | EffectNativelyMappedErrors;
+  | EffectNativelyMappedErrors
+  | EffectNoMapFileError;

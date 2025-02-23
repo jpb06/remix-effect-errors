@@ -23,15 +23,21 @@ export const AppErrors = (props: ErrorsDetails) => {
         Match.when(isEffectError, ({ _tag, errors }) =>
           errors.map((error, index) =>
             Match.value(_tag).pipe(
-              Match.when('effect-natively-mapped-errors', () => (
-                <NativelyMappedEffectErrorDetails
-                  // biome-ignore lint/suspicious/noArrayIndexKey: no id
-                  key={index}
-                  number={index + 1}
-                  error={error as ErrorData}
-                  hasSeveralErrors={hasSeveralErrors}
-                />
-              )),
+              Match.when(
+                (tag) =>
+                  tag === 'effect-natively-mapped-errors' ||
+                  tag === 'effect-no-map-file',
+                (tag) => (
+                  <NativelyMappedEffectErrorDetails
+                    // biome-ignore lint/suspicious/noArrayIndexKey: no id
+                    key={index}
+                    number={index + 1}
+                    error={error as ErrorData}
+                    hasSeveralErrors={hasSeveralErrors}
+                    tag={tag}
+                  />
+                ),
+              ),
               Match.when('effect-post-mapped-errors', () => (
                 <PostMappedEffectErrorDetails
                   // biome-ignore lint/suspicious/noArrayIndexKey: no id

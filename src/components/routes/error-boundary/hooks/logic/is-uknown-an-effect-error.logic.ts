@@ -11,6 +11,7 @@ export const isUnknownAnEffectError = (
 
   return (
     withMaybeData?.data?._tag === 'effect-post-mapped-errors' ||
-    withMaybeData?.data?._tag === 'effect-natively-mapped-errors'
+    withMaybeData?.data?._tag === 'effect-natively-mapped-errors' ||
+    withMaybeData?.data?._tag === 'effect-no-map-file'
   );
 };

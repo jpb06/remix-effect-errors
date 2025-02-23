@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs } from '@remix-run/server-runtime';
 import { Effect, pipe } from 'effect';
 
-import { collectErrorDetails } from './logic/collect-error-details';
+import { collectErrorDetails } from './logic/collect-error-details/collect-error-details';
 import { remixThrow } from './logic/remix-throw';
 
 export const effectLoader =
