@@ -4,7 +4,7 @@
     "": {
       "name": "remix-effect-errors",
       "dependencies": {
-        "@effect/platform": "0.77.4",
+        "@effect/platform": "0.79.1",
         "@remix-run/css-bundle": "2.16.0",
         "@remix-run/node": "2.16.0",
         "@remix-run/react": "2.16.0",
@@ -219,7 +219,7 @@
 
     "@csstools/selector-specificity": ["@csstools/selector-specificity@3.1.1", "", { "peerDependencies": { "postcss-selector-parser": "^6.0.13" } }, "sha512-a7cxGcJ2wIlMFLlh8z2ONm+715QkPHiyJcxwQlKOz/03GPw1COpfhcmC9wm4xlZfp//jWHNNMwzjtqHXVWU9KA=="],
 
-    "@effect/platform": ["@effect/platform@0.77.4", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.13.4" } }, "sha512-3jBDn4bAWqRSKARmoMY2NmMxIMM5Py5BqJdUuYJqPyI6jbz7qkOMwgeaF62rWqiqhQLHLTgU4QL/cPwyZl7mVg=="],
+    "@effect/platform": ["@effect/platform@0.79.1", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.13.10" } }, "sha512-kCoeBuQrdMuEigcuXk9eDoL9WiFIlLlLZeQZj/LapxC3kgnw/6BViJsRQm+Iqei7Z+zRr930suMpdX75CujCXA=="],
 
     "@effect/platform-node": ["@effect/platform-node@0.73.4", "", { "dependencies": { "@effect/platform-node-shared": "^0.27.4", "mime": "^3.0.0", "undici": "^7.1.0", "ws": "^8.18.0" }, "peerDependencies": { "@effect/platform": "^0.77.4", "effect": "^3.13.4" } }, "sha512-mIsOxD3mmbwDjSrsRbxYYCzmSztQSRk4Bu/wej2E3c3pKQq5nwBtob8+H+idC1ugtTyuzJs7lJGSSuACiDjTnA=="],
 
@@ -1842,6 +1842,10 @@
     "compression/debug": ["debug@2.6.9", "", { "dependencies": { "ms": "2.0.0" } }, "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="],
 
     "crosspath/@types/node": ["@types/node@17.0.45", "", {}, "sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw=="],
+
+    "effect-cloudflare-r2-layer/@effect/platform": ["@effect/platform@0.77.4", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.13.4" } }, "sha512-3jBDn4bAWqRSKARmoMY2NmMxIMM5Py5BqJdUuYJqPyI6jbz7qkOMwgeaF62rWqiqhQLHLTgU4QL/cPwyZl7mVg=="],
+
+    "effect-errors/@effect/platform": ["@effect/platform@0.77.4", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.13.4" } }, "sha512-3jBDn4bAWqRSKARmoMY2NmMxIMM5Py5BqJdUuYJqPyI6jbz7qkOMwgeaF62rWqiqhQLHLTgU4QL/cPwyZl7mVg=="],
 
     "estree-util-value-to-estree/is-plain-obj": ["is-plain-obj@3.0.0", "", {}, "sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA=="],
 
