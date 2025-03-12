@@ -20,7 +20,7 @@
     "sync-icons": "bun generateReadmeIcons -h 50"
   },
   "dependencies": {
-    "@effect/platform": "0.77.4",
+    "@effect/platform": "0.79.1",
     "@remix-run/css-bundle": "2.16.0",
     "@remix-run/node": "2.16.0",
     "@remix-run/react": "2.16.0",
@@ -30,9 +30,9 @@
     "comment-json": "4.2.5",
     "date-fns": "4.1.0",
     "effect": "3.13.10",
-    "effect-cloudflare-r2-layer": "1.1.1",
-    "effect-errors": "1.8.39",
-    "framer-motion": "12.5.0",
+    "effect-cloudflare-r2-layer": "1.1.2",
+    "effect-errors": "1.8.43",
+    "framer-motion": "12.4.7",
     "highlight.js": "11.11.1",
     "isbot": "5.1.23",
     "picocolors": "1.1.1",
