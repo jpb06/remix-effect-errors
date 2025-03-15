@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@iconify/json": "2.2.316",
+    "@iconify/json": "2.2.317",
     "@pandacss/dev": "0.53.1",
     "@remix-run/dev": "2.16.0",
     "@svgr/core": "8.1.0",
