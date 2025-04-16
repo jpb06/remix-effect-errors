@@ -48,7 +48,7 @@
     "@remix-run/dev": "2.16.5",
     "@svgr/core": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
-    "@types/react": "19.1.0",
+    "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "@vercel/remix": "2.15.3",
     "npm-check-updates": "17.1.18",
