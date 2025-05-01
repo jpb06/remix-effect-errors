@@ -4,7 +4,7 @@
     "": {
       "name": "remix-effect-errors",
       "dependencies": {
-        "@effect/platform": "0.80.11",
+        "@effect/platform": "0.80.18",
         "@remix-run/css-bundle": "2.16.5",
         "@remix-run/node": "2.16.5",
         "@remix-run/react": "2.16.5",
@@ -223,7 +223,7 @@
 
     "@effect/experimental": ["@effect/experimental@0.44.11", "", { "dependencies": { "uuid": "^11.0.3" }, "peerDependencies": { "@effect/platform": "^0.80.11", "effect": "^3.14.11", "ioredis": "^5", "lmdb": "^3" }, "optionalPeers": ["ioredis", "lmdb"] }, "sha512-jUsZH7reBG8MEs2pEyjvAcFea4tuIuof8+8I+7rguy7oWLLIb3FSL3ZGEBTw4uWpHmTcDoY8dugOkpZPwILaNw=="],
 
-    "@effect/platform": ["@effect/platform@0.80.11", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "msgpackr": "^1.11.2", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.14.11" } }, "sha512-FS3rrxl6EKO+KiJaqgjw5FYtlWU2lqWQ5ewaXYMOG7xMxjYKjZCevG9moXiWNnnzZ0SJZpTt8kxckl/T7al3XQ=="],
+    "@effect/platform": ["@effect/platform@0.80.18", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "msgpackr": "^1.11.2", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.14.18" } }, "sha512-LciOic6grlRpS6A0nC36K+/bzJB05JPGVrlC1ywlNSeKl01qc1za+H+RuBZ+tfd/eqDWVmGY3kwGv/cUfrogGw=="],
 
     "@effect/platform-node": ["@effect/platform-node@0.76.21", "", { "dependencies": { "@effect/platform-node-shared": "^0.30.21", "mime": "^3.0.0", "undici": "^7.1.0", "ws": "^8.18.0" }, "peerDependencies": { "@effect/cluster": "^0.29.21", "@effect/platform": "^0.80.11", "@effect/rpc": "^0.55.16", "@effect/sql": "^0.33.11", "effect": "^3.14.11" } }, "sha512-sGX+b5Lkj9dGi7VWhPVKLNX8CyzDHuiDv5Z53TtMEtiVnd6s/dmcYBGFdOt6a5xDdeO23Ikm1qhxJBF+LxVdXw=="],
 
@@ -1882,6 +1882,10 @@
     "compression/debug": ["debug@2.6.9", "", { "dependencies": { "ms": "2.0.0" } }, "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="],
 
     "crosspath/@types/node": ["@types/node@17.0.45", "", {}, "sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw=="],
+
+    "effect-cloudflare-r2-layer/@effect/platform": ["@effect/platform@0.80.11", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "msgpackr": "^1.11.2", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.14.11" } }, "sha512-FS3rrxl6EKO+KiJaqgjw5FYtlWU2lqWQ5ewaXYMOG7xMxjYKjZCevG9moXiWNnnzZ0SJZpTt8kxckl/T7al3XQ=="],
+
+    "effect-errors/@effect/platform": ["@effect/platform@0.80.11", "", { "dependencies": { "find-my-way-ts": "^0.1.5", "msgpackr": "^1.11.2", "multipasta": "^0.2.5" }, "peerDependencies": { "effect": "^3.14.11" } }, "sha512-FS3rrxl6EKO+KiJaqgjw5FYtlWU2lqWQ5ewaXYMOG7xMxjYKjZCevG9moXiWNnnzZ0SJZpTt8kxckl/T7al3XQ=="],
 
     "estree-util-value-to-estree/is-plain-obj": ["is-plain-obj@3.0.0", "", {}, "sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA=="],
 
