@@ -29,7 +29,7 @@
     "cacheable": "1.8.10",
     "comment-json": "4.2.5",
     "date-fns": "4.1.0",
-    "effect": "3.14.18",
+    "effect": "3.14.21",
     "effect-cloudflare-r2-layer": "1.1.19",
     "effect-errors": "1.10.5",
     "framer-motion": "12.9.4",
