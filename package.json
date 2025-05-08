@@ -32,7 +32,7 @@
     "effect": "3.14.21",
     "effect-cloudflare-r2-layer": "1.1.19",
     "effect-errors": "1.10.7",
-    "framer-motion": "12.9.4",
+    "framer-motion": "12.10.4",
     "highlight.js": "11.11.1",
     "isbot": "5.1.27",
     "picocolors": "1.1.1",
