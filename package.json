@@ -20,7 +20,7 @@
     "sync-icons": "bun generateReadmeIcons -h 50"
   },
   "dependencies": {
-    "@effect/platform": "0.82.0",
+    "@effect/platform": "0.82.2",
     "@remix-run/css-bundle": "2.16.6",
     "@remix-run/node": "2.16.6",
     "@remix-run/react": "2.16.6",
