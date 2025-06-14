@@ -52,7 +52,7 @@
     "@types/react-dom": "19.1.5",
     "@vercel/remix": "2.16.6",
     "npm-check-updates": "18.0.1",
-    "postcss": "8.5.3",
+    "postcss": "8.5.5",
     "readme-package-icons": "1.2.1",
     "typescript": "5.8.3",
     "unplugin-icons": "22.1.0",
