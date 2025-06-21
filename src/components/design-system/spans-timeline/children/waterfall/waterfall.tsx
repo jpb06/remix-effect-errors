@@ -1,6 +1,7 @@
-import { Box } from '@panda/jsx';
 import type { ErrorSpan } from 'effect-errors';
 import type { FunctionComponent } from 'react';
+
+import { Box } from '@panda/jsx';
 
 import { spansTimelineWaterfallStyles } from './waterfall.styles';
 
@@ -23,7 +24,7 @@ export const SpansTimelineWaterfall: FunctionComponent<
 
         return (
           <Box
-            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+            // biome-ignore lint/suspicious/noArrayIndexKey: /
             key={index}
             className={css.span}
             style={{

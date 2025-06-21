@@ -26,4 +26,5 @@ const TaggedErrorWithCtorExample = () => {
   return <>{JSON.stringify(data)}</>;
 };
 
+// biome-ignore lint/style/noDefaultExport: remix
 export default TaggedErrorWithCtorExample;
