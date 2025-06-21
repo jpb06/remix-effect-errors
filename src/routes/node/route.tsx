@@ -1,7 +1,6 @@
 import { useLoaderData } from '@remix-run/react';
 
 import { ErrorBoundary as Boundary } from '@components/routes/error-boundary';
-
 import { nodeExample } from '@examples';
 
 export const loader = () => nodeExample();
@@ -14,4 +13,5 @@ const NodeErrorExample = () => {
   return <>{data}</>;
 };
 
+// biome-ignore lint/style/noDefaultExport: remix
 export default NodeErrorExample;

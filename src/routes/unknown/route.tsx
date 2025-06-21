@@ -26,4 +26,5 @@ const UnknownError = () => {
   return <>{data}</>;
 };
 
+// biome-ignore lint/style/noDefaultExport: remix
 export default UnknownError;

@@ -31,4 +31,5 @@ const handleRequest = (
         remixContext,
       );
 
+// biome-ignore lint/style/noDefaultExport: remix
 export default handleRequest;

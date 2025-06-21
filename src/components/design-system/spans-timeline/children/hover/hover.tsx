@@ -1,6 +1,7 @@
-import { Box } from '@panda/jsx';
 import type { ErrorSpan } from 'effect-errors';
 import type { FunctionComponent } from 'react';
+
+import { Box } from '@panda/jsx';
 
 import { spansTimelineHoverStyles } from './hover.styles';
 
@@ -17,7 +18,7 @@ export const SpanTimelineHover: FunctionComponent<SpansTimelineHoverProps> = ({
     <Box className={css.root}>
       {spans.map(({ name, durationInMilliseconds }, index) => (
         <Box
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: /
           key={index}
           className={css.span}
         >

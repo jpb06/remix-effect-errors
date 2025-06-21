@@ -26,4 +26,5 @@ const TaggedError = () => {
   return <>{data}</>;
 };
 
+// biome-ignore lint/style/noDefaultExport: remix
 export default TaggedError;
