@@ -1,8 +1,8 @@
 import { FetchHttpClient } from '@effect/platform';
 import { NodeFileSystem } from '@effect/platform-node';
 import { Effect, Layer, Match, pipe } from 'effect';
-import { captureErrors, prettyPrint } from 'effect-errors';
 import type { Cause } from 'effect/Cause';
+import { captureErrors, prettyPrint } from 'effect-errors';
 
 import {
   type ErrorsWithNoSourceDueToNoMapFile,

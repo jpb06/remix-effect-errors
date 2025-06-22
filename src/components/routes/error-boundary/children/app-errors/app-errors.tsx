@@ -1,7 +1,9 @@
-import { Box } from '@panda/jsx';
-import type { EffectErrorWithSources } from '@types';
 import { Match } from 'effect';
 import type { ErrorData } from 'effect-errors';
+import type { FunctionComponent } from 'react';
+
+import { Box } from '@panda/jsx';
+import type { EffectErrorWithSources } from '@types';
 
 import type { ErrorsDetails } from '../../hooks/use-error-details';
 import { appErrorStyles } from './app-error.styles';
@@ -12,7 +14,7 @@ import {
 import { isEffectError } from './logic/is-effect-error.logic';
 import { NodeErrorDetails } from './node-error-details';
 
-export const AppErrors = (props: ErrorsDetails) => {
+export const AppErrors: FunctionComponent<ErrorsDetails> = (props) => {
   const css = appErrorStyles();
 
   const hasSeveralErrors = props.errors.length > 1;

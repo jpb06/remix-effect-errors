@@ -1,10 +1,11 @@
-import { Box } from '@panda/jsx';
 import type { FunctionComponent } from 'react';
 
 import { CodeFromString } from '@components/design-system/code';
 import { Link } from '@components/design-system/link';
 import { Title } from '@components/design-system/title';
+import { Box } from '@panda/jsx';
 
+import { indexPageStyles } from './index-page.styles';
 import {
   collectErrorDetailsCode,
   effectLoaderCode,
@@ -13,7 +14,6 @@ import {
   routeLoaderCode,
   useErrorDetailsCode,
 } from './index-page-code-samples';
-import { indexPageStyles } from './index-page.styles';
 
 export const IndexPage: FunctionComponent = () => {
   const css = indexPageStyles();

@@ -1,5 +1,6 @@
 import type { ErrorSpan } from 'effect-errors';
 import type { FunctionComponent } from 'react';
+
 import { spansDetailsStyles } from './span-details.styles';
 
 type SpanDetailsProps = ErrorSpan;
