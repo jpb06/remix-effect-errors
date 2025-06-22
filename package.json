@@ -31,7 +31,7 @@
     "date-fns": "4.1.0",
     "effect": "3.16.8",
     "effect-cloudflare-r2-layer": "1.1.36",
-    "effect-errors": "1.10.12",
+    "effect-errors": "1.10.13",
     "framer-motion": "12.18.1",
     "highlight.js": "11.11.1",
     "isbot": "5.1.28",
