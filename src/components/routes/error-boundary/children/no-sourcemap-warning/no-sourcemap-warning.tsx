@@ -1,12 +1,12 @@
 import type { FunctionComponent } from 'react';
 
-import AkarIconsChatError from '~icons/akar-icons/chat-error';
-
 import { Card } from '@components/design-system/card';
 import { MotionContainer } from '@components/design-system/motion-container';
 
 import type { ErrorsDetails } from '../../hooks/use-error-details';
 import { noSourcemapWarningStyles } from './no-sourcemap-warning.styles';
+
+import AkarIconsChatError from '~icons/akar-icons/chat-error';
 
 type NoSourcemapWarningProps = Pick<ErrorsDetails, '_tag'>;
 

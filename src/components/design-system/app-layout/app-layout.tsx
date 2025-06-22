@@ -1,6 +1,7 @@
 import { Links, Meta, Scripts, ScrollRestoration } from '@remix-run/react';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
+import { GlobalLoading } from '../../routes/global-loading/global-loading';
 import { AppBar } from '../app-bar';
 import { appLayoutStyles } from './app-layout.styles';
 
@@ -19,9 +20,12 @@ export const AppLayout: FunctionComponent<PropsWithChildren> = ({
         <Meta />
         <Links />
       </head>
-      <body className={css.body}>
-        <AppBar />
-        {children}
+      <body>
+        <GlobalLoading />
+        <div className={css.content}>
+          <AppBar />
+          {children}
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>

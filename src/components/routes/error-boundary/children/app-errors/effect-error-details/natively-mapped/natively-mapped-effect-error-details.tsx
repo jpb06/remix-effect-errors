@@ -1,9 +1,9 @@
-import { Box } from '@panda/jsx';
 import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
 import { MotionContainer } from '@components/design-system/motion-container';
 import { SpansTimeline } from '@components/design-system/spans-timeline';
+import { Box } from '@panda/jsx';
 
 import {
   ErrorMessage,

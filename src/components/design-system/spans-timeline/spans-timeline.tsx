@@ -1,14 +1,14 @@
-import { cx } from '@panda/css';
-import { Box } from '@panda/jsx';
 import type { ErrorSpan } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
 import { MotionContainer } from '@components/design-system/motion-container';
+import { cx } from '@panda/css';
+import { Box } from '@panda/jsx';
 
 import {
-  SpanTimelineHover,
   SpansTimelineTitle,
   SpansTimelineWaterfall,
+  SpanTimelineHover,
 } from './children';
 import { useErrorData } from './hooks/use-error-data';
 import { spanTimelineStyles } from './spans-timeline.styles';

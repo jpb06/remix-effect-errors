@@ -1,8 +1,8 @@
-import { Box } from '@panda/jsx';
 import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
 import { Stacktrace } from '@components/design-system/stacktrace';
+import { Box } from '@panda/jsx';
 
 import { effectErrorDetailsStyles } from '../../common-children';
 

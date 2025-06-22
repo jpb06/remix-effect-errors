@@ -1,4 +1,4 @@
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, useNavigation } from '@remix-run/react';
 import { Effect, pipe } from 'effect';
 
 import { ErrorBoundary as Boundary } from '@components/routes/error-boundary';
@@ -7,7 +7,7 @@ import { effectLoader } from '@server/loader/effect-loader';
 
 export const loader = effectLoader(({ request }) =>
   pipe(
-    Effect.all([Effect.sleep('23 millis'), parallelTask]),
+    Effect.all([Effect.sleep('200 millis'), parallelTask]),
     Effect.withSpan('parallel-example-loader', {
       attributes: {
         url: request.url,
@@ -22,6 +22,11 @@ export const ErrorBoundary = () => <Boundary />;
 
 const ParallelExample = () => {
   const data = useLoaderData<typeof loader>();
+  const { state } = useNavigation();
+
+  if (state === 'loading') {
+    return <>Loading</>;
+  }
 
   return <>{data}</>;
 };

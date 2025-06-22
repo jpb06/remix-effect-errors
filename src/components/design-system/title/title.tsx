@@ -1,6 +1,6 @@
-import { cx } from '@panda/css';
-import type { PropsWithChildren } from 'react';
+import type { FunctionComponent, PropsWithChildren } from 'react';
 
+import { cx } from '@panda/css';
 import type { PropsWithClassName } from '@types';
 
 import { type TitleSize, titleStyles } from './title.styles';
@@ -11,7 +11,11 @@ type TitleProps = PropsWithChildren<
   }>
 >;
 
-export const Title = ({ size, children, className }: TitleProps) => {
+export const Title: FunctionComponent<TitleProps> = ({
+  size,
+  children,
+  className,
+}) => {
   const css = titleStyles({
     size,
   });

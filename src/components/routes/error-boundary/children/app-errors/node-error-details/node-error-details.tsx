@@ -1,3 +1,5 @@
+import type { FunctionComponent } from 'react';
+
 import { Card } from '@components/design-system/card';
 
 import { ErrorNumber } from '../effect-error-details/common-children/error-message/error-number';
@@ -9,11 +11,11 @@ type NodeErrorDetailsProps = {
   error: Error;
 };
 
-export const NodeErrorDetails = ({
+export const NodeErrorDetails: FunctionComponent<NodeErrorDetailsProps> = ({
   number,
   hasSeveralErrors,
   error,
-}: NodeErrorDetailsProps) => {
+}) => {
   const css = nodeErrorDetailsStyles();
 
   return (

@@ -1,9 +1,9 @@
-import { Box } from '@panda/jsx';
 import type { FunctionComponent } from 'react';
 
 import { CodeFromPostMappedEffectError } from '@components/design-system/code';
 import { MotionContainer } from '@components/design-system/motion-container';
 import { SpansTimeline } from '@components/design-system/spans-timeline';
+import { Box } from '@panda/jsx';
 import type { EffectErrorWithSources } from '@types';
 
 import {

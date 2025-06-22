@@ -1,7 +1,8 @@
-import { cx } from '@panda/css';
 import 'highlight.js/styles/github-dark.css';
+
 import type { FunctionComponent } from 'react';
 
+import { cx } from '@panda/css';
 import type { PropsWithClassName } from '@types';
 
 import { MotionContainer } from '../motion-container';

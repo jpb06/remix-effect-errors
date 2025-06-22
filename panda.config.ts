@@ -1,6 +1,9 @@
-import { defineConfig } from '@pandacss/dev';
 import pandaPreset from '@pandacss/preset-panda';
+
+import { defineConfig } from '@pandacss/dev';
 import { colors } from '@theme/colors';
+import { keyframes } from '@theme/keyframes';
+import { animationStyles } from '@theme/animation-styles';
 
 export default defineConfig({
   preflight: true,
@@ -11,7 +14,8 @@ export default defineConfig({
   theme: {
     extend: {
       semanticTokens: { colors },
-      //keyframes: keyframes,
+      keyframes,
+      animationStyles
     },
   },
   outdir: 'styled-system',

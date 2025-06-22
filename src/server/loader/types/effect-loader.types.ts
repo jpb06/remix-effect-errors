@@ -1,5 +1,6 @@
-import type { EffectErrorWithSources } from '@types';
 import type { ErrorData } from 'effect-errors';
+
+import type { EffectErrorWithSources } from '@types';
 
 export interface EffectLoaderSuccess<A> {
   _tag: 'success';

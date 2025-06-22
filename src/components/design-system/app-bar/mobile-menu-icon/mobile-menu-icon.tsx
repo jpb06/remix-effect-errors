@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-type MobileMenuIconProps = FunctionComponent<
-  PropsWithChildren<{
-    key?: number;
-    rotate: number;
-  }>
->;
+type MobileMenuIconProps = PropsWithChildren<{
+  key?: number;
+  rotate: number;
+}>;
 
-export const MobileMenuIcon: MobileMenuIconProps = ({
+export const MobileMenuIcon: FunctionComponent<MobileMenuIconProps> = ({
   children,
   key,
   rotate,

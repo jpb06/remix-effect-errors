@@ -1,6 +1,6 @@
-import { css, cx } from '@panda/css';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
+import { css, cx } from '@panda/css';
 import type { PropsWithPandaStyles } from '@types';
 
 import { MotionContainer } from '../motion-container/motion-container';

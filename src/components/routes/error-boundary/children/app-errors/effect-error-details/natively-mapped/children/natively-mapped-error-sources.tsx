@@ -1,9 +1,8 @@
-import { Box } from '@panda/jsx';
-
 import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
 import { CodeFromNativelyMappedEffectError } from '@components/design-system/code';
+import { Box } from '@panda/jsx';
 
 import { effectErrorDetailsStyles } from '../../common-children';
 

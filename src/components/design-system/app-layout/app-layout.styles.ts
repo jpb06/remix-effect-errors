@@ -1,7 +1,7 @@
 import { sva } from '@panda/css';
 
 export const appLayoutStyles = sva({
-  slots: ['html', 'body'],
+  slots: ['html', 'content'],
   base: {
     html: {
       backgroundSize: 'cover',
@@ -13,7 +13,7 @@ export const appLayoutStyles = sva({
       gradientTo: '#0c4a6e',
       minHeight: '100vh',
     },
-    body: {
+    content: {
       display: 'flex',
       flexDirection: 'column',
       paddingX: '0.5rem',

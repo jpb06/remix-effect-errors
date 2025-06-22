@@ -1,12 +1,12 @@
 import type { FunctionComponent } from 'react';
 
-import TeenyiconsMoodFrownSolid from '~icons/teenyicons/mood-frown-solid';
-
 import { Card } from '@components/design-system/card';
 import { Title } from '@components/design-system/title';
 
 import type { ErrorsDetails } from '../../hooks/use-error-details';
 import { errorBoundarySummaryStyles } from './summary.styles';
+
+import TeenyiconsMoodFrownSolid from '~icons/teenyicons/mood-frown-solid';
 
 type SummaryProps = Pick<ErrorsDetails, 'errors'>;
 

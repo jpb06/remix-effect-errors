@@ -3,13 +3,11 @@ import type { FunctionComponent, PropsWithChildren } from 'react';
 
 import { linkStyles } from './link.styles';
 
-type LinkProps = FunctionComponent<
-  PropsWithChildren<{
-    href: string;
-  }>
->;
+type LinkProps = PropsWithChildren<{
+  href: string;
+}>;
 
-export const Link: LinkProps = ({ href, children }) => {
+export const Link: FunctionComponent<LinkProps> = ({ href, children }) => {
   const css = linkStyles();
 
   return (

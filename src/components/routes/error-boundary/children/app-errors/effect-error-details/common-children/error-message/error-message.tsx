@@ -1,5 +1,5 @@
-import type { ErrorData } from 'effect-errors';
 import { isObject } from 'effect/Predicate';
+import type { ErrorData } from 'effect-errors';
 import type { FunctionComponent } from 'react';
 
 import type { EffectErrorWithSources } from '@types';

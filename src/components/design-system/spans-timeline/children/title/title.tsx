@@ -1,5 +1,6 @@
-import { Box } from '@panda/jsx';
 import type { FunctionComponent } from 'react';
+
+import { Box } from '@panda/jsx';
 
 import { spansTimelineTitleStyles } from './title.styles';
 
