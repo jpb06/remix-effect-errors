@@ -25,7 +25,7 @@ const ParallelExample = () => {
   const { state } = useNavigation();
 
   if (state === 'loading') {
-    return <>Loading</>;
+    return 'Loading';
   }
 
   return <>{data}</>;
