@@ -1,10 +1,11 @@
+import { defineConfig } from '@pandacss/dev';
 import pandaPreset from '@pandacss/preset-panda';
 
-import { defineConfig } from '@pandacss/dev';
+import { animationStyles } from '@theme/animation-styles';
 import { colors } from '@theme/colors';
 import { keyframes } from '@theme/keyframes';
-import { animationStyles } from '@theme/animation-styles';
 
+// biome-ignore lint/style/noDefaultExport: panda
 export default defineConfig({
   preflight: true,
   jsxFramework: 'react',
@@ -15,7 +16,7 @@ export default defineConfig({
     extend: {
       semanticTokens: { colors },
       keyframes,
-      animationStyles
+      animationStyles,
     },
   },
   outdir: 'styled-system',
