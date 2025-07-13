@@ -30,7 +30,7 @@
 		"comment-json": "4.2.5",
 		"date-fns": "4.1.0",
 		"effect": "3.16.13",
-		"effect-cloudflare-r2-layer": "1.1.41",
+		"effect-cloudflare-r2-layer": "1.1.42",
 		"effect-errors": "1.10.14",
 		"framer-motion": "12.23.3",
 		"highlight.js": "11.11.1",
