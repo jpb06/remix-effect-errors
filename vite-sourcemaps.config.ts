@@ -7,6 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 installGlobals();
 
+// biome-ignore lint/style/noDefaultExport: vite
 export default defineConfig({
   build: {
     emptyOutDir: true,
