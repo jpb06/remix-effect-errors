@@ -42,7 +42,7 @@
 		"source-map-js": "1.2.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.1.1",
+		"@biomejs/biome": "2.1.2",
 		"@iconify/json": "2.2.357",
 		"@pandacss/dev": "0.54.0",
 		"@remix-run/dev": "2.16.8",
