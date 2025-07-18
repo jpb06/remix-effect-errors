@@ -10,7 +10,7 @@
         "@remix-run/react": "2.16.8",
         "@remix-run/serve": "2.16.8",
         "@remix-run/server-runtime": "2.16.8",
-        "cacheable": "1.10.1",
+        "cacheable": "1.10.2",
         "comment-json": "4.2.5",
         "date-fns": "4.1.0",
         "effect": "3.16.13",
@@ -723,7 +723,7 @@
 
     "cacache": ["cacache@17.1.4", "", { "dependencies": { "@npmcli/fs": "^3.1.0", "fs-minipass": "^3.0.0", "glob": "^10.2.2", "lru-cache": "^7.7.1", "minipass": "^7.0.3", "minipass-collect": "^1.0.2", "minipass-flush": "^1.0.5", "minipass-pipeline": "^1.2.4", "p-map": "^4.0.0", "ssri": "^10.0.0", "tar": "^6.1.11", "unique-filename": "^3.0.0" } }, "sha512-/aJwG2l3ZMJ1xNAnqbMpA40of9dj/pIH3QfiuQSqjfPJF747VR0J/bHn+/KdNnHKc6XQcWt/AfRSBft82W1d2A=="],
 
-    "cacheable": ["cacheable@1.10.1", "", { "dependencies": { "hookified": "^1.10.0", "keyv": "^5.3.4" } }, "sha512-Fa2BZY0CS9F0PFc/6aVA6tgpOdw+hmv9dkZOlHXII5v5Hw+meJBIWDcPrG9q/dXxGcNbym5t77fzmawrBQfTmQ=="],
+    "cacheable": ["cacheable@1.10.2", "", { "dependencies": { "hookified": "^1.10.0", "keyv": "^5.3.4" } }, "sha512-hMkETCRV4hwBAvjQY1/xGw15tlPj+7cM4d5HOlYJJFftLQVRCboVX+mT6AJ6eL0fsqUhSUwDiF+pgfTR2r2Hxg=="],
 
     "call-bind": ["call-bind@1.0.8", "", { "dependencies": { "call-bind-apply-helpers": "^1.0.0", "es-define-property": "^1.0.0", "get-intrinsic": "^1.2.4", "set-function-length": "^1.2.2" } }, "sha512-oKlSFMcMwpUg2ednkhQ454wfWiU/ul3CkJe/PEHcTKuiX6RpbehUiFMXu13HalGZxfUwCQzZG747YXBn1im9ww=="],
 
