@@ -4,7 +4,7 @@
     "": {
       "name": "remix-effect-errors",
       "dependencies": {
-        "@effect/platform": "0.88.2",
+        "@effect/platform": "0.90.0",
         "@remix-run/css-bundle": "2.16.8",
         "@remix-run/node": "2.16.8",
         "@remix-run/react": "2.16.8",
@@ -225,7 +225,7 @@
 
     "@effect/experimental": ["@effect/experimental@0.51.14", "", { "dependencies": { "uuid": "^11.0.3" }, "peerDependencies": { "@effect/platform": "^0.87.13", "effect": "^3.16.13", "ioredis": "^5", "lmdb": "^3" }, "optionalPeers": ["ioredis", "lmdb"] }, "sha512-LO7YesKWQogxCYSpvuzx+k1EwEusOtd2DJW2fGHhMHb3jUCbkR/UvTgld+hUnzOlauaRmy7NRCfVnanjU42OXA=="],
 
-    "@effect/platform": ["@effect/platform@0.88.2", "", { "dependencies": { "@opentelemetry/semantic-conventions": "^1.33.0", "find-my-way-ts": "^0.1.6", "msgpackr": "^1.11.4", "multipasta": "^0.2.7" }, "peerDependencies": { "effect": "^3.16.16" } }, "sha512-JnPCfQz1y8ZED2OBxU82iFBT43fXrl26N+PEFtLWn1EedG6C6AwFvwbpFkICF3G2Qj/ZZ153xZaAxtVOPu4WTg=="],
+    "@effect/platform": ["@effect/platform@0.90.0", "", { "dependencies": { "@opentelemetry/semantic-conventions": "^1.33.0", "find-my-way-ts": "^0.1.6", "msgpackr": "^1.11.4", "multipasta": "^0.2.7" }, "peerDependencies": { "effect": "^3.17.0" } }, "sha512-F26RZO8qVyCLH43EF9BvJwrhtFsZL2Xv66Jxxjj/sBIes8TOVpyebaysQ7Tz33xALobwU1eNgm8vh18VkJiWnQ=="],
 
     "@effect/platform-node": ["@effect/platform-node@0.89.6", "", { "dependencies": { "@effect/platform-node-shared": "^0.42.18", "mime": "^3.0.0", "undici": "^7.10.0", "ws": "^8.18.2" }, "peerDependencies": { "@effect/cluster": "^0.41.18", "@effect/platform": "^0.87.13", "@effect/rpc": "^0.64.14", "@effect/sql": "^0.40.14", "effect": "^3.16.13" } }, "sha512-lIRihE/I1bF92H4N5ZFgrw59puQfyqscnbsEr32XRPxdON/POEUScT20cRvFee0q5JGT4Y/M1XQwLeBHcbQ4lA=="],
 
