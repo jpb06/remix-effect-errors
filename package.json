@@ -51,7 +51,7 @@
 		"@types/react": "19.1.12",
 		"@types/react-dom": "19.1.9",
 		"@vercel/remix": "2.16.7",
-		"npm-check-updates": "18.0.2",
+		"npm-check-updates": "18.0.3",
 		"postcss": "8.5.6",
 		"readme-package-icons": "1.2.2",
 		"typescript": "5.9.2",
