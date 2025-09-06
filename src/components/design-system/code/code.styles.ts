@@ -13,7 +13,7 @@ export const codeStyles = sva({
       borderStyle: 'solid',
       padding: 2,
       borderRadius: 'xl',
-      bgGradient: 'to-tl',
+      bgLinear: 'to-tl',
       gradientFrom: 'violet.950',
       gradientTo: 'teal.950',
       color: 'emerald.100',
@@ -53,7 +53,7 @@ export const codeStyles = sva({
         },
       },
       _hover: {
-        bgGradient: 'to-tl',
+        bgLinear: 'to-tl',
         gradientFrom: 'purple.900/70',
         gradientFromPosition: '-50%',
         gradientTo: 'amber.950/70',

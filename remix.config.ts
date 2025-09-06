@@ -5,7 +5,7 @@ const remixConfig: AppConfig = {
   cacheDirectory: './node_modules/.cache/remix',
   ignoredRouteFiles: ['**/.*', '**/*.test.{ts,tsx}'],
   // serverModuleFormat: 'cjs',
-  watchPaths: ['./src/**/*'],
+  watchPaths: ['./src/**/*', 'panda.config.ts'],
 };
 
 // biome-ignore lint/style/noDefaultExport: remix

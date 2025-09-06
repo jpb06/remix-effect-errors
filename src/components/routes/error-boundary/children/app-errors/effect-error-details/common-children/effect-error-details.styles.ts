@@ -13,7 +13,7 @@ export const effectErrorDetailsStyles = sva({
       fontWeight: 800,
       maxWidth: '52rem',
       color: 'orange.500',
-      bgGradient: 'to-tl',
+      bgLinear: 'to-tl',
       gradientFrom: 'red.500/40',
       gradientTo: 'red.700/60',
       border: 5,

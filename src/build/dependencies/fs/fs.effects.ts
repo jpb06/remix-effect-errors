@@ -1,4 +1,5 @@
 import { readFile, stat, writeFile } from 'node:fs/promises';
+
 import { parse } from 'comment-json';
 import { Effect, pipe } from 'effect';
 

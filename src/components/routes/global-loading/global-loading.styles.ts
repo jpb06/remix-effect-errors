@@ -14,7 +14,7 @@ export const globalLoadingStyles = sva({
     },
     progressBar: {
       height: '100%',
-      bgGradient: 'to-tr',
+      bgLinear: 'to-tr',
       gradientFrom: 'cyan.300',
       gradientTo: 'blue.400',
       transition: 'all 500ms ease-in-out',

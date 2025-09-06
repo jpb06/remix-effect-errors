@@ -6,11 +6,7 @@ export const appLayoutStyles = sva({
     html: {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      bgGradient: 'to-tr',
-      gradientFrom: '#2e1065',
-      gradientVia: '#1e1b4b',
-      gradientViaPosition: '45%',
-      gradientTo: '#0c4a6e',
+      bgColor: 'gray.800',
       minHeight: '100vh',
     },
     content: {

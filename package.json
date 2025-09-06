@@ -13,6 +13,7 @@
 		"delete-sourcemaps": "bun ./src/build/delete-sourcemaps.ts",
 		"dev": "remix vite:dev",
 		"type-check": "tsc",
+		"check": "biome check ./src",
 		"format": "biome format --write ./src",
 		"format-ci": "biome format ./src",
 		"lint": "biome lint ./src",

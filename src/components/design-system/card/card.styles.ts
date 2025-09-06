@@ -14,7 +14,7 @@ export const createStyles = sva({
       borderRadius: '2xl',
       overflow: 'clip',
       color: 'slate.200',
-      bgGradient: 'to-tl',
+      bgLinear: 'to-tl',
       gradientFrom: 'indigo.950',
       gradientToPosition: '90%',
       gradientTo: 'cyan.950',
