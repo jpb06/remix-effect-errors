@@ -6,9 +6,9 @@ export const spansTimelineWaterfallStyles = sva({
     span: {
       border: 2,
       borderColor: 'amber.500/70',
-      bgGradient: 'to-tr',
-      gradientFrom: 'orange.600/70',
-      gradientTo: 'amber.700/70',
+      bgLinear: 'to-tr',
+      gradientFrom: 'orange.600',
+      gradientTo: 'amber.700',
       borderStyle: 'solid',
       padding: '0.2rem',
       rounded: 'md',

@@ -9,7 +9,7 @@ export const spanTimelineStyles = sva({
       flexDirection: 'column',
       gap: 1,
       maxWidth: '52rem',
-      bgGradient: 'to-tl',
+      bgLinear: 'to-tl',
       gradientFrom: 'red.500/40',
       gradientTo: 'red.700/60',
       border: 5,
@@ -34,7 +34,7 @@ export const spanTimelineStyles = sva({
     bar: {
       border: 2,
       borderColor: 'amber.500/70',
-      bgGradient: 'to-tr',
+      bgLinear: 'to-tr',
       gradientFrom: 'orange.600/70',
       gradientTo: 'amber.700/70',
       borderStyle: 'solid',
