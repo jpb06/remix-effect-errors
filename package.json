@@ -28,7 +28,7 @@
 		"@remix-run/serve": "2.17.1",
 		"@remix-run/server-runtime": "2.17.1",
 		"cacheable": "2.0.1",
-		"comment-json": "4.2.5",
+		"comment-json": "4.3.0",
 		"date-fns": "4.1.0",
 		"effect": "3.17.14",
 		"effect-cloudflare-r2-layer": "1.1.49",
