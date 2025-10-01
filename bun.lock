@@ -15,7 +15,7 @@
         "date-fns": "4.1.0",
         "effect": "3.17.14",
         "effect-cloudflare-r2-layer": "1.1.51",
-        "effect-errors": "1.10.15",
+        "effect-errors": "1.10.16",
         "framer-motion": "12.23.22",
         "highlight.js": "11.11.1",
         "isbot": "5.1.31",
@@ -871,7 +871,7 @@
 
     "effect-cloudflare-r2-layer": ["effect-cloudflare-r2-layer@1.1.51", "", { "dependencies": { "@aws-sdk/client-s3": "3.896.0", "@aws-sdk/s3-request-presigner": "3.896.0", "dotenv-flow": "4.1.0" }, "peerDependencies": { "@effect/platform": "0.x", "effect": "3.x" } }, "sha512-W7Acr5Iwvp4ZRYVUBYpL4tV6wS2ZC9vyJT+Kib8wWgaFTf3OupCr2zu3H9SWP1EKgmLBK5lYGQq6tUg06/TLSA=="],
 
-    "effect-errors": ["effect-errors@1.10.15", "", { "dependencies": { "comment-json": "4.2.5", "picocolors": "1.1.1", "source-map-js": "1.2.1" }, "peerDependencies": { "@effect/cluster": "0.x", "@effect/platform": "0.x", "@effect/platform-node": "0.x", "@effect/rpc": "0.x", "@effect/sql": "0.x", "effect": "3.x" } }, "sha512-OFJDWMo8QqUZJqRQy6esYZP/2yTvX7OIkjC2lMP2x2EFl90RPk+D5rh4zHvx1coeeBGfl3Lvsfn7xsEpte80xw=="],
+    "effect-errors": ["effect-errors@1.10.16", "", { "dependencies": { "comment-json": "4.3.0", "picocolors": "1.1.1", "source-map-js": "1.2.1" }, "peerDependencies": { "@effect/cluster": "0.x", "@effect/platform": "0.x", "@effect/platform-node": "0.x", "@effect/rpc": "0.x", "@effect/sql": "0.x", "effect": "3.x" } }, "sha512-4FvWA1hgl4VyEoFpzkjBcpW7+WU7Xmde1kRrMZ+PmrG/qyZGT0pXK//8NdIKUytMz2m/n5douAk1SUxalcT63Q=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.182", "", {}, "sha512-Lv65Btwv9W4J9pyODI6EWpdnhfvrve/us5h1WspW8B2Fb0366REPtY3hX7ounk1CkV/TBjWCEvCBBbYbmV0qCA=="],
 
@@ -2136,8 +2136,6 @@
     "compression/debug": ["debug@2.6.9", "", { "dependencies": { "ms": "2.0.0" } }, "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="],
 
     "crosspath/@types/node": ["@types/node@17.0.45", "", {}, "sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw=="],
-
-    "effect-errors/comment-json": ["comment-json@4.2.5", "", { "dependencies": { "array-timsort": "^1.0.3", "core-util-is": "^1.0.3", "esprima": "^4.0.1", "has-own-prop": "^2.0.0", "repeat-string": "^1.6.1" } }, "sha512-bKw/r35jR3HGt5PEPm1ljsQQGyCrR8sFGNiN5L+ykDHdpO8Smxkrkla9Yi6NkQyUrb8V54PGhfMs6NrIwtxtdw=="],
 
     "esbuild-plugins-node-modules-polyfill/local-pkg": ["local-pkg@1.1.1", "", { "dependencies": { "mlly": "^1.7.4", "pkg-types": "^2.0.1", "quansync": "^0.2.8" } }, "sha512-WunYko2W1NcdfAFpuLUoucsgULmgDBRkdxHxWQ7mK0cQqwPiy8E1enjuRBrhLtZkB5iScJ1XIPdhVEFK8aOLSg=="],
 
