@@ -15,7 +15,7 @@
         "date-fns": "4.1.0",
         "effect": "3.18.4",
         "effect-cloudflare-r2-layer": "1.1.51",
-        "effect-errors": "1.10.16",
+        "effect-errors": "1.10.17",
         "framer-motion": "12.23.22",
         "highlight.js": "11.11.1",
         "isbot": "5.1.31",
@@ -873,7 +873,7 @@
 
     "effect-cloudflare-r2-layer": ["effect-cloudflare-r2-layer@1.1.51", "", { "dependencies": { "@aws-sdk/client-s3": "3.896.0", "@aws-sdk/s3-request-presigner": "3.896.0", "dotenv-flow": "4.1.0" }, "peerDependencies": { "@effect/platform": "0.x", "effect": "3.x" } }, "sha512-W7Acr5Iwvp4ZRYVUBYpL4tV6wS2ZC9vyJT+Kib8wWgaFTf3OupCr2zu3H9SWP1EKgmLBK5lYGQq6tUg06/TLSA=="],
 
-    "effect-errors": ["effect-errors@1.10.16", "", { "dependencies": { "comment-json": "4.3.0", "picocolors": "1.1.1", "source-map-js": "1.2.1" }, "peerDependencies": { "@effect/cluster": "0.x", "@effect/platform": "0.x", "@effect/platform-node": "0.x", "@effect/rpc": "0.x", "@effect/sql": "0.x", "effect": "3.x" } }, "sha512-4FvWA1hgl4VyEoFpzkjBcpW7+WU7Xmde1kRrMZ+PmrG/qyZGT0pXK//8NdIKUytMz2m/n5douAk1SUxalcT63Q=="],
+    "effect-errors": ["effect-errors@1.10.17", "", { "dependencies": { "comment-json": "4.4.1", "picocolors": "1.1.1", "source-map-js": "1.2.1" }, "peerDependencies": { "@effect/cluster": "0.x", "@effect/platform": "0.x", "@effect/platform-node": "0.x", "@effect/rpc": "0.x", "@effect/sql": "0.x", "effect": "3.x" } }, "sha512-MwzK7iVxc67YCjyKI+w+h9VMC+CSKvAj3nXJ0YYV53ZQDazTcvRMFzer0zmGhHVA+SFt0OoSjeLUy8zJN8GFow=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.228", "", {}, "sha512-nxkiyuqAn4MJ1QbobwqJILiDtu/jk14hEAWaMiJmNPh1Z+jqoFlBFZjdXwLWGeVSeu9hGLg6+2G9yJaW8rBIFA=="],
 
@@ -1908,8 +1908,6 @@
     "compression/debug": ["debug@2.6.9", "", { "dependencies": { "ms": "2.0.0" } }, "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="],
 
     "crosspath/@types/node": ["@types/node@17.0.45", "", {}, "sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw=="],
-
-    "effect-errors/comment-json": ["comment-json@4.3.0", "", { "dependencies": { "array-timsort": "^1.0.3", "core-util-is": "^1.0.3", "esprima": "^4.0.1" } }, "sha512-DczdmbvWLd09KATFWY0xcihOO45b32+5V34vZg1oelxqgjtGJotaLrrdFpJRLOdG6Wb031qcg4zOKgnQoBWbEw=="],
 
     "estree-util-value-to-estree/is-plain-obj": ["is-plain-obj@3.0.0", "", {}, "sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA=="],
 
