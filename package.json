@@ -27,7 +27,7 @@
 		"@remix-run/react": "2.17.1",
 		"@remix-run/serve": "2.17.1",
 		"@remix-run/server-runtime": "2.17.1",
-		"cacheable": "2.0.3",
+		"cacheable": "2.1.0",
 		"comment-json": "4.4.1",
 		"date-fns": "4.1.0",
 		"effect": "3.18.4",
