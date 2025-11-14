@@ -14,7 +14,7 @@
         "cacheable": "2.1.1",
         "comment-json": "4.4.1",
         "date-fns": "4.1.0",
-        "effect": "3.18.4",
+        "effect": "3.19.3",
         "effect-cloudflare-r2-layer": "1.1.52",
         "effect-errors": "1.10.17",
         "framer-motion": "12.23.24",
@@ -870,7 +870,7 @@
 
     "ee-first": ["ee-first@1.1.1", "", {}, "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="],
 
-    "effect": ["effect@3.18.4", "", { "dependencies": { "@standard-schema/spec": "^1.0.0", "fast-check": "^3.23.1" } }, "sha512-b1LXQJLe9D11wfnOKAk3PKxuqYshQ0Heez+y5pnkd3jLj1yx9QhM72zZ9uUrOQyNvrs2GZZd/3maL0ZV18YuDA=="],
+    "effect": ["effect@3.19.3", "", { "dependencies": { "@standard-schema/spec": "^1.0.0", "fast-check": "^3.23.1" } }, "sha512-LodiPXiyUJWQ5LoMhUGbu0acD2ff5A5teJtUlLKDPVfoeWEBcZLlzK8BeVXpVa0f30UsdHouVCf0C/E0TxYMrA=="],
 
     "effect-cloudflare-r2-layer": ["effect-cloudflare-r2-layer@1.1.52", "", { "dependencies": { "@aws-sdk/client-s3": "3.901.0", "@aws-sdk/s3-request-presigner": "3.901.0", "dotenv-flow": "4.1.0" }, "peerDependencies": { "@effect/platform": "0.x", "effect": "3.x" } }, "sha512-GtyPae2Nldq/PxwZVea+C8tFUgS6n19RG5SpFkdtnIzVvSaObYhtYlmfSRuO5zIC3rj9kYjaI7X/vIzCa7WkEg=="],
 
