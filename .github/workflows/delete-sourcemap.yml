@@ -25,7 +25,7 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
 
       - name: 📦 Setup bun
-        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+        uses: oven-sh/setup-bun@db6bcf6eb8d88a8aa03265b887ec7bd84d64cd68 # v2.1.1
         with:
           bun-version: latest
 
