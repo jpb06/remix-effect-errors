@@ -28,7 +28,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "2.3.10",
-        "@iconify/json": "2.2.420",
+        "@iconify/json": "2.2.428",
         "@pandacss/dev": "1.7.1",
         "@remix-run/dev": "2.17.4",
         "@svgr/core": "8.1.0",
@@ -298,7 +298,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.17.6", "", { "os": "win32", "cpu": "x64" }, "sha512-n6d8MOyUrNp6G4VSpRcgjs5xj4A91svJSaiwLIDWVWEsZtpN5FA9NlBbZHDmAJc2e8e6SF4tkBD3HAvPF+7igA=="],
 
-    "@iconify/json": ["@iconify/json@2.2.420", "", { "dependencies": { "@iconify/types": "*", "pathe": "^2.0.3" } }, "sha512-3dgvkB8eiUA/PkGHaRB+x17MS1u22V2O1YtFpdpdFpbXp/fAdloOMbxeMXXgNlcGgjk7x4hUIeDunic/diHYqg=="],
+    "@iconify/json": ["@iconify/json@2.2.428", "", { "dependencies": { "@iconify/types": "*", "pathe": "^2.0.3" } }, "sha512-HPfpZMJAfU3hBRUqD522/Ukf/AKNb7OCEMm6BeuQLF0CHx5TAz9mRuVDBYMg+LZOKye1ocrxBjOgdyCu0GlVbA=="],
 
     "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 
