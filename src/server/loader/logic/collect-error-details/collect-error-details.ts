@@ -17,7 +17,7 @@ export const collectErrorDetails = <E>(cause: Cause<E>) =>
       const errorsText = prettyPrint(cause, { stripCwd: false });
       console.error(errorsText);
 
-      const { errors } = yield* captureErrors(cause, {});
+      const { errors } = yield* captureErrors(cause, true);
 
       if (errors.every((e) => e.location !== undefined)) {
         const errorsWithMaybeSources =
