@@ -28,7 +28,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "2.4.6",
-        "@iconify/json": "2.2.447",
+        "@iconify/json": "2.2.448",
         "@pandacss/dev": "1.9.0",
         "@remix-run/dev": "2.17.4",
         "@svgr/core": "8.1.0",
@@ -298,7 +298,7 @@
 
     "@hono/node-server": ["@hono/node-server@1.19.11", "", { "peerDependencies": { "hono": "^4" } }, "sha512-dr8/3zEaB+p0D2n/IUrlPF1HZm586qgJNXK1a9fhg/PzdtkK7Ksd5l312tJX2yBuALqDYBlG20QEbayqPyxn+g=="],
 
-    "@iconify/json": ["@iconify/json@2.2.447", "", { "dependencies": { "@iconify/types": "*", "pathe": "^2.0.3" } }, "sha512-hRPz6U6eN0C959BrYb0rE+I6f7BjDIPfgt8C9Ln5FxZ1Hw3aJQ+su/qbWy/+yJU74lLlXuwaS0ZfE8Kam6NkeA=="],
+    "@iconify/json": ["@iconify/json@2.2.448", "", { "dependencies": { "@iconify/types": "*", "pathe": "^2.0.3" } }, "sha512-67zot0eJmV9qbap6pDyE+VBtje09kKoetE0zRwauScpSeG1AnCUkL4YdiT9BA6Nu78Np5CNAgF6rZJ6b7G6dNw=="],
 
     "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 
