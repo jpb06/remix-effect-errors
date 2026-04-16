@@ -17,9 +17,9 @@ export const SpanDetails: FunctionComponent<SpanDetailsProps> = ({
       <details open={true} className={css.details}>
         <summary className={css.summary}>{name}</summary>
         <div className={css.duration}>
-          {durationInMilliseconds !== undefined
-            ? `~ ${durationInMilliseconds} ms`
-            : ''}
+          {durationInMilliseconds === undefined
+            ? ''
+            : `~ ${durationInMilliseconds} ms`}
         </div>
         <div className={css.attributes}>
           {Object.entries(attributes)
