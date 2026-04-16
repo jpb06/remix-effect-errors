@@ -55,7 +55,7 @@
 		"npm-check-updates": "21.0.2",
 		"postcss": "8.5.10",
 		"readme-package-icons": "1.2.2",
-		"typescript": "5.9.3",
+		"typescript": "6.0.2",
 		"unplugin-icons": "23.0.1",
 		"vite": "8.0.8",
 		"vite-tsconfig-paths": "6.1.1"
