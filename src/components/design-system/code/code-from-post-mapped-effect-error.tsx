@@ -22,7 +22,7 @@ export const CodeFromPostMappedEffectError: FunctionComponent<
 
   return (
     <MotionContainer className={cx(css.root, className)}>
-      <Header title={`./${filePath} ${name !== null ? `(${name})` : ''}`} />
+      <Header title={`./${filePath} ${name === null ? '' : `(${name})`}`} />
       {excerpt.map((code, index) => {
         const lineNumber = start + index + 1;
         return (
