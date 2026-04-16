@@ -23,7 +23,6 @@
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
-		"baseUrl": ".",
 		"paths": {
 			"@components/*": ["./src/components/*"],
 			"@theme/*": ["./src/theme/*"],

@@ -3,12 +3,14 @@ import { installGlobals } from '@remix-run/node';
 import { vercelPreset } from '@vercel/remix/vite';
 import Icons from 'unplugin-icons/vite';
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 installGlobals();
 
 // biome-ignore lint/style/noDefaultExport: vite
 export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+  },
   build: {
     emptyOutDir: true,
     sourcemap: true,
@@ -20,7 +22,6 @@ export default defineConfig({
       presets: [vercelPreset()],
       appDirectory: 'src',
     }),
-    tsconfigPaths(),
     Icons({
       compiler: 'jsx',
       autoInstall: true,
