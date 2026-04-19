@@ -38,7 +38,7 @@
         "@vercel/remix": "2.16.7",
         "npm-check-updates": "21.0.2",
         "postcss": "8.5.10",
-        "readme-package-icons": "1.2.2",
+        "readme-package-icons": "1.2.3",
         "typescript": "6.0.3",
         "unplugin-icons": "23.0.1",
         "vite": "8.0.8",
@@ -1077,8 +1077,6 @@
 
     "has-flag": ["has-flag@4.0.0", "", {}, "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="],
 
-    "has-own-prop": ["has-own-prop@2.0.0", "", {}, "sha512-Pq0h+hvsVm6dDEa8x82GnLSYHOzNDt7f0ddFa3FqcQlgzEiptPqL+XrOJNavjOzSYiYWIrgeVYYgGlLmnxwilQ=="],
-
     "has-property-descriptors": ["has-property-descriptors@1.0.2", "", { "dependencies": { "es-define-property": "^1.0.0" } }, "sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg=="],
 
     "has-symbols": ["has-symbols@1.1.0", "", {}, "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ=="],
@@ -1603,7 +1601,7 @@
 
     "readdirp": ["readdirp@3.6.0", "", { "dependencies": { "picomatch": "^2.2.1" } }, "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA=="],
 
-    "readme-package-icons": ["readme-package-icons@1.2.2", "", { "dependencies": { "comment-json": "4.2.5", "picocolors": "1.1.1", "yargs": "18.0.0" }, "bin": { "generateReadmeIcons": "cjs/cli/generate-readme-icons.cli.js", "generateReadmeIconsEsm": "esm/cli/generate-readme-icons.cli.js" } }, "sha512-R0TvKd4gFdyc3f6Lo3xik/2FsYoru1BC4zNlhYY7k5SgnjCz3G0ja3Rr/j2w4Njxb/RbmZLzh3LcJs4WekCC7w=="],
+    "readme-package-icons": ["readme-package-icons@1.2.3", "", { "dependencies": { "comment-json": "5.0.0", "picocolors": "1.1.1", "yargs": "18.0.0" }, "bin": { "generateReadmeIcons": "cjs/cli/generate-readme-icons.cli.js", "generateReadmeIconsEsm": "esm/cli/generate-readme-icons.cli.js" } }, "sha512-nyRA9ZahqNoaygD+xYrTlw384XzEQIj2OchWAoJ3J1Y+Y4l1Qx3NzFErmHX7QE6GWcibKXgiaAiuDEjFH/gvTw=="],
 
     "remark-frontmatter": ["remark-frontmatter@4.0.1", "", { "dependencies": { "@types/mdast": "^3.0.0", "mdast-util-frontmatter": "^1.0.0", "micromark-extension-frontmatter": "^1.0.0", "unified": "^10.0.0" } }, "sha512-38fJrB0KnmD3E33a5jZC/5+gGAC2WKNiPw1/fdXJvijBlhA7RCsvJklrYJakS0HedninvaCYW8lQGf9C918GfA=="],
 
@@ -1616,8 +1614,6 @@
     "remark-rehype": ["remark-rehype@10.1.0", "", { "dependencies": { "@types/hast": "^2.0.0", "@types/mdast": "^3.0.0", "mdast-util-to-hast": "^12.1.0", "unified": "^10.0.0" } }, "sha512-EFmR5zppdBp0WQeDVZ/b66CWJipB2q2VLNFMabzDSGR66Z2fQii83G5gTBbgGEnEEA0QRussvrFHxk1HWGJskw=="],
 
     "remix-typedjson": ["remix-typedjson@0.4.1", "", { "peerDependencies": { "@remix-run/react": "^1.16.0 || ^2.0", "@remix-run/server-runtime": "^1.16.0 || ^2.0", "react": "^17.0.2 || ^18.0.0" } }, "sha512-AL6LdNajqce1Exy6aB1bD6GYMk90S6H31e8kDCi6jLgBi4K82Ph604lqGGzalswaPPYckYK+NZzgvhWEY7JCDw=="],
-
-    "repeat-string": ["repeat-string@1.6.1", "", {}, "sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w=="],
 
     "require-from-string": ["require-from-string@2.0.2", "", {}, "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="],
 
@@ -2044,8 +2040,6 @@
     "raw-body/iconv-lite": ["iconv-lite@0.7.2", "", { "dependencies": { "safer-buffer": ">= 2.1.2 < 3.0.0" } }, "sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw=="],
 
     "readable-stream/safe-buffer": ["safe-buffer@5.1.2", "", {}, "sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g=="],
-
-    "readme-package-icons/comment-json": ["comment-json@4.2.5", "", { "dependencies": { "array-timsort": "^1.0.3", "core-util-is": "^1.0.3", "esprima": "^4.0.1", "has-own-prop": "^2.0.0", "repeat-string": "^1.6.1" } }, "sha512-bKw/r35jR3HGt5PEPm1ljsQQGyCrR8sFGNiN5L+ykDHdpO8Smxkrkla9Yi6NkQyUrb8V54PGhfMs6NrIwtxtdw=="],
 
     "remark-mdx-frontmatter/estree-util-is-identifier-name": ["estree-util-is-identifier-name@1.1.0", "", {}, "sha512-OVJZ3fGGt9By77Ix9NhaRbzfbDV/2rx9EP7YIDJTmsZSEc5kYn2vWcNccYyahJL2uAQZK2a5Or2i0wtIKTPoRQ=="],
 
