@@ -54,7 +54,7 @@
 		"@vercel/remix": "2.16.7",
 		"npm-check-updates": "21.0.2",
 		"postcss": "8.5.10",
-		"readme-package-icons": "1.2.2",
+		"readme-package-icons": "1.2.3",
 		"typescript": "6.0.3",
 		"unplugin-icons": "23.0.1",
 		"vite": "8.0.8"
